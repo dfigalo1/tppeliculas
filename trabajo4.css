@@ -5,64 +5,34 @@ body {
   background: #030521;
 }
 
-
 .boxes{
   display: flex;
-  flex-direction: row; /*valor por defecto del flex*/
+  flex-direction: row;
 justify-content: space-between;
- padding: 5px; /*espacio para menu */
+ padding: 5px;
 margin: 30px 30px;
 }
 
 .image{
   width: 200px; 
+  border-radius: 30px;
+  opacity: 1;
 
 }
 
-/* 
-.teams > img {
-  width: 19%;
-}
-.teams {
-  padding: 0px 20px 0;
-  position: relative;
-   width: 19%;
-  margin-top: 20px;
-}
-.teams > .overlay {
-  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
-  height: 100%;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 260px;
+.image:hover{
+  opacity: 0.3;
+  transition: 0.5s;
+} 
+
+.ver-mas{
+color: #f3772e;
+margin: 30px 600px;
+font-size: 16px;
+font-weight: bold;
 }
 
-.teams h3 {
-  text-align: center;
-  font-size: 22px;
-  font-weight: 400;
-  font-family: 'Roboto', sans-serif;
-    color: #7e7e7e;
-}
-/* .team p {
-  color: #bcbcbc;
-  font-family: "Poppins",sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 50px;
-/* } 
-.teams:hover>.overlay{
-    opacity: 1
-}
-.teams:hover>.icon{
-    opacity: 1
-} */
-
-
-
-                                         /* FOOTER */
+/* FOOTER */
 
 .footer {
   margin: 0 auto;
@@ -82,33 +52,32 @@ footer .end-line{
   display: none;
 }
 
-                                         /* POR EL A */
-li, a {
+
+/* ME FALTA H4 y P */
+/*FALTA CLASE DEL all */
+
+
+
+/* VER EL ICONO DE LA FLECHA QUE QUEDO PEGADO */
+ a {
   text-decoration: none;
   list-style: none;
   color: grey;
   font-size: 10px;
   display: block;
+  margin-left: 15px;
 }
-li:hover, a:hover {
+a:hover {
   color: white;
 }
 
-li i, a i {
-  display: block;
-  margin-left: 15px;
-}
-
-/* ME FALTA H4 y P */
-
-                                    /* PLACEHOLDER */
+/* PLACEHOLDER */
 body header div input.entry {
   font-size: 16px;
   box-sizing: border-box;
   width: 100%;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 8px 24px 24px 8px;
   text-indent: 16px;
   margin: 0;
   outline: none;
