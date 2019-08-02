@@ -1,0 +1,122 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #f3772e;
+  background: #030521;
+}
+
+
+.boxes{
+  display: flex;
+  flex-direction: row; /*valor por defecto del flex*/
+justify-content: space-between;
+ padding: 5px; /*espacio para menu */
+margin: 30px 30px;
+}
+
+.image{
+  width: 200px; 
+
+}
+
+/* 
+.teams > img {
+  width: 19%;
+}
+.teams {
+  padding: 0px 20px 0;
+  position: relative;
+   width: 19%;
+  margin-top: 20px;
+}
+.teams > .overlay {
+  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 260px;
+}
+
+.teams h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+    color: #7e7e7e;
+}
+/* .team p {
+  color: #bcbcbc;
+  font-family: "Poppins",sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 50px;
+/* } 
+.teams:hover>.overlay{
+    opacity: 1
+}
+.teams:hover>.icon{
+    opacity: 1
+} */
+
+
+
+                                         /* FOOTER */
+
+.footer {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 90%;
+  min-width: 600px;
+  max-width: 900px;
+}
+footer nav{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  clear: both;
+}
+
+footer .end-line{
+  display: none;
+}
+
+                                         /* POR EL A */
+li, a {
+  text-decoration: none;
+  list-style: none;
+  color: grey;
+  font-size: 10px;
+  display: block;
+}
+li:hover, a:hover {
+  color: white;
+}
+
+li i, a i {
+  display: block;
+  margin-left: 15px;
+}
+
+/* ME FALTA H4 y P */
+
+                                    /* PLACEHOLDER */
+body header div input.entry {
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px 24px 24px 8px;
+  text-indent: 16px;
+  margin: 0;
+  outline: none;
+  border: none;
+}
+body header div input.entry:focus {
+  color: #fff;
+}
+body header div input.entry::placeholder {
+  color: #fff !important;
+}
