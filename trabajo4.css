@@ -5,6 +5,14 @@ body {
   background: #030521;
 }
 
+.mainBanner{
+  background-image: url("images/imagengrande.jpg"); /* cambie la ubicacion */
+  height: 500px; /* no es el height verdadero de la imagen */
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
 .boxes{
   display: flex;
   flex-direction: row;
@@ -26,9 +34,9 @@ margin: 30px 30px;
 } 
 
 .ver-mas{
-color: #f3772e;
+  color: grey;
 margin: 30px 600px;
-font-size: 16px;
+font-size: 20px;
 font-weight: bold;
 }
 
@@ -52,13 +60,24 @@ footer .end-line{
   display: none;
 }
 
+.all{
+  display: flex;
+  flex-direction: row;
+justify-content: space-between;
+ padding: 5px;
+margin: 30px 30px;
+font-size: 15px;
+}
+/* VER EL ICONO DE LA FLECHA QUE QUEDO PEGADO */
+
+
 
 /* ME FALTA H4 y P */
-/*FALTA CLASE DEL all */
 
 
 
-/* VER EL ICONO DE LA FLECHA QUE QUEDO PEGADO */
+
+
  a {
   text-decoration: none;
   list-style: none;
