@@ -2,7 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: #f3772e;
-  background: #030521;
+  background-color: #030521;
 }
 
 .boxes{
@@ -30,6 +30,11 @@ color: #f3772e;
 margin: 30px 600px;
 font-size: 16px;
 font-weight: bold;
+}
+/*HOME HEADER */
+
+.home-header{
+  background-image: url(assets/batman.jpg)
 }
 
 /* FOOTER */
