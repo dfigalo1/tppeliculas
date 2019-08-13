@@ -94,3 +94,24 @@ body header div input.entry:focus {
 body header div input.entry::placeholder {
   color: #fff !important;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  position: fixed;
+  height: 100%;
+  
+}
+
+li a {
+  display: block;
+  color: #f3772e;
+  width: 60px;
+  padding: 8px 16px;
+
+
+}
+
+
