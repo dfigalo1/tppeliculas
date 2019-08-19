@@ -1,0 +1,22 @@
+{
+  "name": "tppeliculas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "trabajo4.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfigalo1/tppeliculas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dfigalo1/tppeliculas/issues"
+  },
+  "homepage": "https://github.com/dfigalo1/tppeliculas#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
