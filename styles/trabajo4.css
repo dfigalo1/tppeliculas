@@ -8,7 +8,7 @@ body {
 
 .mainBanner{
   background-image: url("images/imagengrande.jpg"); /* cambie la ubicacion */
-  height: 500px; /* no es el height verdadero de la imagen */
+  height: 740px; /* no es el height verdadero de la imagen */
   background-position: center;
   background-size: cover;
   position: relative;
