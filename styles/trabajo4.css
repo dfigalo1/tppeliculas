@@ -1,8 +1,9 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  color: #f3772e;
-  background: #030521;
+  color: #ffffff;
+  background: rgb(33,136,113);
+  background: radial-gradient(circle, rgba(33,136,113,1) 0%, rgba(16,11,96,1) 99%);
 }
 
 .mainBanner{
@@ -34,7 +35,7 @@ margin: 30px 30px;
 } 
 
 .ver-mas{
-  color: grey;
+  color: rgb(199, 199, 199);
 margin: 30px 600px;
 font-size: 20px;
 font-weight: bold;
@@ -81,7 +82,7 @@ font-size: 15px;
  a {
   text-decoration: none;
   list-style: none;
-  color: grey;
+  color: rgb(199, 199, 199);
   font-size: 10px;
   display: block;
   margin-left: 15px;
@@ -108,3 +109,4 @@ body header div input.entry:focus {
 body header div input.entry::placeholder {
   color: #fff !important;
 }
+

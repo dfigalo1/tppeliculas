@@ -17,33 +17,30 @@
 <header>
     <div>
         <input id="entryField" class="entry" placeholder="Busque su pelicula..." type="text"
-            onkeypress="keyPress(event)" />
+            onkeypress="keyPress(event)" /> 
+            <!-- EVENTO -->
+            <svg class="header__search-icon"><use xlink:href="#iconSearch"></use></svg>
     </div>
 
-    <!-- NAVEGADOR -->
-<nav class="nav">
-    <div class="navHamburger"></div>
-    <ul class="sideBar">
-        <li class="sideBarItem"><use xlink:href="#icon_popular"></use></li>
-        <li class="sideBarItem"></li>
-        <li class="sideBarItem"></li>
-  
-                 <span class="nav__link-title">Now Playing</span></div></a>
-        <li class="sideBarItem"></li>
-    </ul>
-</nav>
 
-<!-- IMAGEN -->
-<section class="mainBanner">
-        <div> 
-            <h1 class="XXXX">D&G Movies</h1>
+    <!-- BARRA-->
+
+    <!-- HACER BARRA -->
+
+
+
+    <!-- IMAGEN -->
+    <section class="mainBanner"> 
+        <div>
+             <!-- <h1 class="XXXX"></h1>  SACARLO  -->
+             <!--IMAGEN De FONDO QUE DESP TIENE QUE CORRERSE CON EL MENU -->
         </div>
 </header>
 
 <body>
 
     <!-- PRIMERA PARTE -->
-    <!-- <section>
+    <section>
         <h4>Popular Movies</h4>
         <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
         <div class="boxes">
@@ -72,7 +69,7 @@
 
     <section>
         <h4>Top Rated Movies</h4>
-     <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
 
         <div class="boxes">
             <div>
@@ -159,9 +156,9 @@
                 <p>Now Playing Movies</p>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <!-- SEGUNDA PARTE -->
+    <!-- SEGUNDA PARTE
 
     <section>
         <h4>Popular Movies</h4>
@@ -268,7 +265,34 @@
                 <p>Popular Movies</p>
             </div>
     </section>
-    <a class="ver-mas" href="#">Ver más</a>
+    <a class="ver-mas" href="#">Ver más</a> -->
+
+    <!-- MODAL -->
+
+    <div class="close-modal" id="modal">
+        <div class="modal">
+            <div class="first-div">
+                <img class="header-img" id="header-img">
+                <div class="movie-header">
+                    <a href="#" onclick="closeModal()">x</a>
+                    <div>
+                        <h2 class="movie-title" id="movie-title"></h2>
+                        <p id="sub-title"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-info">
+                <div class="movie-image"><img id="movie-image"></div>
+                <div class="movie-description">
+                    <p id="overview"></p>
+                    <h4 class="genres">GENRES</h4>
+                    <p id="genres"></p>
+                    <h4 class="release-date">RELEASE DATE</h4>
+                    <p id="release-date"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
