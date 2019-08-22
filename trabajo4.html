@@ -14,169 +14,190 @@
     <title>Peliculas</title>
 </head>
 <body>
-        <header class="main-header">
-            <div id="searchBar">
-                <a href="#" id="logo"></a>
-                <input type="search" name="busqueda" placeholder="Search for a movie..." >
-                <svg class="color-icon"><use href="#iconSearch"></use></svg>
-            </div>
-        </header>
+    <div id="app">
         <nav class="nav">
-            <div class="navHamburger"></div>
+            <a href="#" class="nav_logo" title="">
+                    <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
+            </a>
+            <div class="navHamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
             <ul class="sideBar">
-                <li class="sideBarItem"><a href="#" class="nav_link">
-                    <div class="nav_link-wrap">
-                        <span class="nav_link-title">Papular</span>
-                    </div>
-                </a>
-                </li>
-                <li class="sideBarItem"><a href="#" class="nav_link">
-                    <div class="nav_link-wrap">
-                        <svg class="nav_link-icon"></svg>
-                        <span class="nav_link-title">Top Rated</span>
-                    </div>
-                </a>
-                </li>
-                <li class="sideBarItem"><a href="#" class="nav_link">
-                    <div class="nav_link-wrap">
-                        <svg class="nav_link-icon"></svg>
-                        <span class="nav_link-title">Upcoming</span>
-                    </div>
-                </a>
-                </li>
-                <li class="sideBarItem"><a href="#" class="nav_link">
-                    <div class="nav_link-wrap">
-                        <svg class="nav_link-icon"></svg>
-                        <span class="nav_link-title">Now Playing</span>
-                    </div>
-                </a>
-                </li>
+                    <li class="sideBarItem">
+                            <a href="#" class="nav_link">
+                                <div class="nav_link-wrap">
+                                    <span class="nav_link-title">Papular</span>
+                                </div>
+                            </a>
+                    </li>
+                    <li class="sideBarItem">
+                            <a href="#" class="nav_link">
+                                <div class="nav_link-wrap">
+                                    <span class="nav_link-title">Top Rated</span>
+                                </div>
+                            </a>
+                    </li>
+                    <li class="sideBarItem">
+                            <a href="#" class="nav_link">
+                                <div class="nav_link-wrap">
+                                    <span class="nav_link-title">Upcoming</span>
+                                </div>
+                            </a>
+                    </li>
+                    <li class="sideBarItem">
+                            <a href="#" class="nav_link">
+                                <div class="nav_link-wrap">
+                                    <span class="nav_link-title">Now Playing</span>
+                                </div>
+                            </a>
+                    </li>
             </ul>
         </nav>
+
+        <header class="main-header">
+                <div class="searchBar">
+                    <input type="search" name="busqueda" placeholder="Search for a movie..." >
+                    <!--<svg class="color-icon"><use href="#iconSearch"></use></svg>-->
+                </div>
+        </header>
+
+        <section id="main">
+                        <header class="home-header">
+                                <h1 class="main-Header-Title">D&G Movies</h1>
+                                </header>
+                        <div class="movies-list">
+                            <h4>Popular Movies</h4>
+                            <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+                            <div class="boxes">
+                                <div>
+                                    <img class="image" src="images/imageone.jpg">
+                                    <p>Popular Movies</p>
+                                </div>
+                                <div>
+                                    <img class="image" src="images/imagetwo.jpg">
+                                    <p>Popular Movies</p>
+                                </div>
+                                <div>
+                                    <img class="image" src="images/imagethree.jpg">
+                                    <p>Popular Movies</p>
+                                </div>
+                                <div>
+                                    <img class="image" src="images/imagefour.jpg">
+                                    <p>Popular Movies</p>
+                                </div>
+                                <div>
+                                    <img class="image" src="images/imagefive.jpg">
+                                    <p>Popular Movies</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="perro" class="animal pequenio">
+                                <p>El Perro</p>
+                              </div>
+                              <button id="btnRemoverPeq">Que no sea pequeño</button>
+                    
+                        <div class="movies-list">
+                            <h4>Top Rated Movies</h4>
+                            <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+                            <div class="boxes">
+                                <div>
+                                    <img class="image" src="images/imageone.jpg">
+                                    <p>Top Rated Movies</p>
+                                </div>
+                                <div>
+                                    <img class="image" src="images/imagetwo.jpg">
+                                    <p>Top Rated Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagethree.jpg">
+                                    <p>Top Rated Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagefour.jpg">
+                                    <p>Top Rated Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagefive.jpg">
+                                    <p>Top Rated Movies</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="movies-list">
+                            <h4>Upcoming Movies</h4>
+                            <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+                            <div class="boxes">
+                                <div>
+                                    <img class="image" src="images/imageone.jpg">
+                                    <p>Upcoming Movies</p>
+                                </div>
+                                <div>
+                                    <img class="image" src="images/imagetwo.jpg">
+                                    <p>Upcoming Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagethree.jpg">
+                                    <p>Upcoming Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagefour.jpg">
+                                    <p>Upcoming Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagefive.jpg">
+                                    <p>Upcoming Movies</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="movies-list">
+                            <h4>Now Playing Movies</h4>
+                            <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+                            <div class="boxes">
+                                <div>
+                                    <img class="image" src="images/imageone.jpg">
+                                    <p>Now Playing Movies</p>
+                                </div>
+                                <div>
+                                    <img class="image" src="images/imagetwo.jpg">
+                                    <p>Now Playing Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagethree.jpg">
+                                    <p>Now Playing Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagefour.jpg">
+                                    <p>Now Playing Movies</p>
+                                </div>
+                    
+                                <div>
+                                    <img class="image" src="images/imagefive.jpg">
+                                    <p>Now Playing Movies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>                    
+
+
+         
+
     <!-- PRIMERA PARTE -->
-    <header class="home-header">
-            <h1 class="main-Header-Title">D&G Movies</h1>
-            </header>
-    <section>
-        <h4>Popular Movies</h4>
-        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
-        <div class="boxes">
-            <div>
-                <img class="image" src="images/imageone.jpg">
-                <p>Popular Movies</p>
-            </div>
-            <div>
-                <img class="image" src="images/imagetwo.jpg">
-                <p>Popular Movies</p>
-            </div>
-            <div>
-                <img class="image" src="images/imagethree.jpg">
-                <p>Popular Movies</p>
-            </div>
-            <div>
-                <img class="image" src="images/imagefour.jpg">
-                <p>Popular Movies</p>
-            </div>
-            <div>
-                <img class="image" src="images/imagefive.jpg">
-                <p>Popular Movies</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h4>Top Rated Movies</h4>
-        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
-        <div class="boxes">
-            <div>
-                <img class="image" src="images/imageone.jpg">
-                <p>Top Rated Movies</p>
-            </div>
-            <div>
-                <img class="image" src="images/imagetwo.jpg">
-                <p>Top Rated Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagethree.jpg">
-                <p>Top Rated Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagefour.jpg">
-                <p>Top Rated Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagefive.jpg">
-                <p>Top Rated Movies</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h4>Upcoming Movies</h4>
-        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
-        <div class="boxes">
-            <div>
-                <img class="image" src="images/imageone.jpg">
-                <p>Upcoming Movies</p>
-            </div>
-            <div>
-                <img class="image" src="images/imagetwo.jpg">
-                <p>Upcoming Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagethree.jpg">
-                <p>Upcoming Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagefour.jpg">
-                <p>Upcoming Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagefive.jpg">
-                <p>Upcoming Movies</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h4>Now Playing Movies</h4>
-        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
-        <div class="boxes">
-            <div>
-                <img class="image" src="images/imageone.jpg">
-                <p>Now Playing Movies</p>
-            </div>
-            <div>
-                <img class="image" src="images/imagetwo.jpg">
-                <p>Now Playing Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagethree.jpg">
-                <p>Now Playing Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagefour.jpg">
-                <p>Now Playing Movies</p>
-            </div>
-
-            <div>
-                <img class="image" src="images/imagefive.jpg">
-                <p>Now Playing Movies</p>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- SEGUNDA PARTE -->
 
-    <!-- <section>
+    <!-- <div>
         <h4>Popular Movies</h4>
         <div class="boxes">
             <div>
@@ -202,8 +223,8 @@
                 <img class="image" src="images/imagefive.jpg">
                 <p>Popular Movies</p>
             </div>
-    </section>
-    <section>
+    </div>
+    <div>
         <div class="boxes">
             <div>
                 <img class="image" src="images/imageone.jpg">
@@ -228,8 +249,8 @@
                 <img class="image" src="images/imagefive.jpg">
                 <p>Popular Movies</p>
             </div>
-    </section>
-    <section>
+    </div>
+    <div>
         <div class="boxes">
             <div>
                 <img class="image" src="images/imageone.jpg">
@@ -254,8 +275,8 @@
                 <img class="image" src="images/imagefive.jpg">
                 <p>Popular Movies</p>
             </div>
-    </section>
-    <section>
+    </div>
+    <div>
         <div class="boxes">
             <div>
                 <img class="image" src="images/imageone.jpg">
@@ -280,9 +301,9 @@
                 <img class="image" src="images/imagefive.jpg">
                 <p>Popular Movies</p>
             </div>
-    </section>
+    </div>
     <a class="ver-mas" href="#">Ver más</a> -->
-
+</section>
     <!-- FOOTER -->
     <footer class="footer">
         <nav>
@@ -294,6 +315,8 @@
         </nav>
         <hr>
     </footer>
+
+</div>
 </body>
 
 </html>
