@@ -25,8 +25,17 @@ time, mark, audio, video {
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  color: #f3772e;
-  background-color: #030521;
+  color: #ffffff;
+  background: rgb(33,136,113);
+  background: radial-gradient(circle, rgba(33,136,113,1) 0%, rgba(16,11,96,1) 99%);
+}
+
+.mainBanner{
+  background-image: url("images/imagengrande.jpg"); /* cambie la ubicacion */
+  height: 740px; /* no es el height verdadero de la imagen */
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
 .boxes{
@@ -50,9 +59,9 @@ margin: 30px 30px;
 } 
 
 .ver-mas{
-color: #f3772e;
+  color: rgb(199, 199, 199);
 margin: 30px 600px;
-font-size: 16px;
+font-size: 20px;
 font-weight: bold;
 }
 /*HOME HEADER */
@@ -81,17 +90,28 @@ footer .end-line{
   display: none;
 }
 
+.all{
+  display: flex;
+  flex-direction: row;
+justify-content: space-between;
+ padding: 5px;
+margin: 30px 30px;
+font-size: 15px;
+}
+/* VER EL ICONO DE LA FLECHA QUE QUEDO PEGADO */
+
+
 
 /* ME FALTA H4 y P */
-/*FALTA CLASE DEL all */
 
 
 
-/* VER EL ICONO DE LA FLECHA QUE QUEDO PEGADO */
+
+
  a {
   text-decoration: none;
   list-style: none;
-  color: grey;
+  color: rgb(199, 199, 199);
   font-size: 10px;
   display: block;
   margin-left: 15px;
@@ -119,112 +139,3 @@ body header div input.entry::placeholder {
   color: #fff !important;
 }
 
-
-
-/* SIDEBAR  NAVEGADOR */
-
-.nav {
-  position: fixed;
-  width: 95px;
-  height: 100vh;
-  z-index: 999;
-}
-
-.nav .nav_logo {
-   background-color: #081c24;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav .nav_logo img{
-  width: 35px;
-}
-
-
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  position: fixed;
-  height: 100%;
-  
-}
-
-li a {
-  display: block;
-  color: #f3772e;
-  width: 60px;
-  padding: 8px 16px;
-
-
-}
-
-.sideBarItem--active {
-  background-color: #030521;
-   color: #fff;
-
-}
-
-/* INPUT SEARCH */
-
-.main-header{
-  position: fixed;
-  z-index: 999;
-  width: 100vw;
-  height: 75px;
-  margin-left: 95px;
-}
-
-.main-header .searchBar{
-  position: relative;
-  height: 100%;
-  background-color: #ffffff;
-}
-
-.searchBar input { 
-  display: block;
-  width: 100%;
-  padding: 15px 20px 15px 45px;
-  outline: none;
-  border: 0;
-  background-color: transparent;
-  color: #081c24;
-  font-weight: 300;
-  font-size: 16px;
-
-}
-
-
-
-/* SECTIONS */
-.main{
-  display: ;
-  margin: 0 0 0 95px;
-  padding: 75px 0 0 0; 
-}
-
-
-.main--active {
-  display: block;
-
-}
-
-.animal {
-  width: 25%;
-  padding: 25px;
-  background-color: red;
-  color: white;
-  font-size: 25px;
-}
-
-.pequenio {
-  width: 15%;
-  padding: 15px;
-  background-color: black;
-  color: white;
-  font-size: 15px;
-}
