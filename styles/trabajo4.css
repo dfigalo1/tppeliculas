@@ -28,15 +28,17 @@ body {
 }
 
 /* IMAGEN GRANDE */
-.mainBanner{
-  padding: 10px 10px 15px 10px;
+ .mainBanner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 70px 0px 70px;
 }
 
 .movies-list{
   padding: 100px 10px 15px 115px;
 }
 /* ARRIBA-DERECHA-ABAJO-IZQUIERDA */
-
 .boxes{
   display: flex;
   flex-direction: row;
@@ -44,6 +46,14 @@ body {
   padding: 5px;
   margin: 30px 30px;
 }
+
+/* PARTE DOS */
+/* .boxes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 100px 10px 15px 115px;
+} */
 
 .image{
   width: 200px; 
@@ -58,7 +68,7 @@ body {
 
 .ver-mas{
   color: rgb(199, 199, 199);
-  margin: 30px 600px;
+  margin: 40px 0px 0px 650px;
   font-size: 20px;
   font-weight: bold;
 }
@@ -133,7 +143,7 @@ footer .end-line{
   display: none;
 }
 
-/* OTROS GRACE */
+/* OTROS */
 
 /* SIDEBAR  NAVEGADOR */
 
@@ -212,11 +222,8 @@ li a {
 
 }
 
-
-
 /* SECTIONS */
 .main{
-  display: ;
   margin: 0 0 0 95px;
   padding: 75px 0 0 0; 
 }
@@ -225,20 +232,4 @@ li a {
 .main--active {
   display: block;
 
-}
-
-.animal {
-  width: 25%;
-  padding: 25px;
-  background-color: red;
-  color: white;
-  font-size: 25px;
-}
-
-.pequenio {
-  width: 15%;
-  padding: 15px;
-  background-color: black;
-  color: white;
-  font-size: 15px;
 }
