@@ -12,7 +12,7 @@ const customFetch = (apiKey, method, payload = '') => {
 }
 
 let apiKey = '0b63f51adbe9c3ff14acc1ab92206b7d'
-let paginaActual = '2'
+let paginaActual = '3'
 
 fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${paginaActual}`)
  .then (response => response.json())

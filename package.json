@@ -16,7 +16,5 @@
     "url": "https://github.com/dfigalo1/tppeliculas/issues"
   },
   "homepage": "https://github.com/dfigalo1/tppeliculas#readme",
-  "dependencies": {
-    "lodash": "^4.17.15"
-  }
+  "dependencies": {}
 }
