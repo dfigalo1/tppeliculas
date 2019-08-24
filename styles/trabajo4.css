@@ -28,15 +28,16 @@ body {
 }
 
 /* IMAGEN GRANDE */
- .mainBanner{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 15px 70px 0px 70px;
-}
+.mainBanner{
+ position:relative;
+ display: block;
+ margin: 0px 110px 0px 110px;
+ height: 530px;
+
+} 
 
 .movies-list{
-  padding: 100px 10px 15px 115px;
+  padding: 20px 10px 15px 115px;
 }
 /* ARRIBA-DERECHA-ABAJO-IZQUIERDA */
 .boxes{
@@ -72,24 +73,39 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
-/* PLACEHOLDER */
-body header div input.entry {
-  font-size: 16px;
-  box-sizing: border-box;
+
+.main-header{
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 75px;
+  margin-left: 106px;
+}
+
+.main-header .searchBar{
+  position: relative;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.searchBar input { 
+  display: block;
   width: 100%;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.2);
-  text-indent: 16px;
-  margin: 0;
+  padding: 30px 60px 15px 45px;
   outline: none;
-  border: none;
+  border: 0;
+  background-color: transparent;
+  color: #081c24;
+  font-weight: 300;
+  font-size: 16px;
 }
-body header div input.entry:focus {
-  color: #fff;
+
+.searchBar .search{
+  height: 15px;
+  width: 15px;
+  padding: 5px 40px 80px 45px;
 }
-body header div input.entry::placeholder {
-  color: #fff !important;
-}
+ /* arriba derecha abajo izq */
 
 /* BARRA */
 .litImage{
@@ -100,7 +116,8 @@ body header div input.entry::placeholder {
 
 .nav_link-title{
   color: rgb(199, 199, 199);
-  margin-left: 9px;
+  margin-left: 2px;
+  font-size: 10px;
 }
 
 .all{
@@ -195,32 +212,7 @@ li a {
 
 /* INPUT SEARCH */
 
-.main-header{
-  position: fixed;
-  z-index: 999;
-  width: 100vw;
-  height: 75px;
-  margin-left: 106px;
-}
 
-.main-header .searchBar{
-  position: relative;
-  height: 100%;
-  background-color: #ffffff;
-}
-
-.searchBar input { 
-  display: block;
-  width: 100%;
-  padding: 30px 20px 15px 45px;
-  outline: none;
-  border: 0;
-  background-color: transparent;
-  color: #081c24;
-  font-weight: 300;
-  font-size: 16px;
-
-}
 
 /* SECTIONS */
 .main{
