@@ -2,11 +2,11 @@
 // MODAL
 let modal = document.getElementById('miModal');
 let flex = document.getElementById('flex');
-let open = document.getElementById('open');
+let boxes = document.getElementById('open');
 let close = document.getElementById('close');
 
 
-open.addEventListener('click',function(){
+boxes.addEventListener('click',function(){
     modal.style.display = 'block' ;
 });
 
