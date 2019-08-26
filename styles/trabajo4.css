@@ -217,6 +217,13 @@ li a {
 
 /* INPUT SEARCH */
 
+.resultName {
+  display:block;
+  background-color: #b0b9bd;
+  color: #081c24; 
+}
+.show {display: block;}
+
 
 
 /* SECTIONS */
