@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body{
+    background: #f2f2f2;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    width:100%;
+    height:600px;
+    background:url('batman.jpg');
+    background-attachment:fixed;
+    background-position:center;
+    background-size:cover;
+}
+
+/* background-position:center;
+    background-size:cover;
+/se adapta al header/ */
+
+.flex{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.textos{
+    padding:300px;
+    color:#fff;
+    text-align:center;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+
+/* / BOTON/ */
+a{
+    text-decoration: none;
+    font-size:20px;
+    display: inline-block;
+    padding:7px;
+    width:220px;
+    border: 1px solid #fff;
+    border-radius:10px;
+    color: #fff;
+
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:1;
+    overflow:auto;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.452);
+}
+
+.contenido-modal{
+    position:relative;
+    background-color:#fefefe;
+    margin:auto;
+    width:30%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4);
+    animation-name:modal;
+    animation-duration:1s;
+}
+/* ANIMACION */
+@keyframes modal{
+    from{top:-330px; opacity:0;}
+    to{top:0; opacity:1;}
+}
+
+.close{
+    color: #f2f2f2;
+    font-size:30px;
+    font-weight:bold;
+    padding: 0px 900px 250px 150px;
+}
+
+.close:hover{
+    color: #7f8c8d;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+.modal-header, .footer{
+padding:8px 16px;
+background: #34495e;
+color: #f2f2f2;
+}
+
+p{
+    text-align: justify;
+
+}
+
+.modal-body{
+    padding:20px 16px;
+}
+
+/* MIO */
+
+.image{
+    width: 200px; 
+    border-radius: 30px;
+    opacity: 1;
+  }
+
+ h2{
+    padding: 20px 100px 0px 100px;
+  }
+ /* h2{
+
+    padding: 90px 900px 60px 80px;
+ }
+    /* ARRIBA-DERECHA-ABAJO-IZQUIERDA */
+
+/* h4{
+    padding: 0px 10px 40px 10px;
+}   */
+
+
+
+
+/* ARRIBA-DERECHA-ABAJO-IZQUIERDA */
+/* ARRIBA-DERECHA-ABAJO-IZQUIERDA */
+/* ARRIBA-DERECHA-ABAJO-IZQUIERDA */
+/* ARRIBA-DERECHA-ABAJO-IZQUIERDA */
+/* ARRIBA-DERECHA-ABAJO-IZQUIERDA */
