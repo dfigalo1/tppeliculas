@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles\trabajo4.css">
-    <script type="text/javascript" src="trabajo4.js"></script>
+    <script type="text/javascript" src=C:\ADA\trabajo4\js\trabaj4.js></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Peliculas G&D</title>
@@ -72,33 +72,65 @@
 </header>
 
 <!-- PRIMERA PARTE -->
- <section class="home" id="home">
-        <img class="mainBanner" src="images\prueba.jpg" />
+<section class="home" id="home">
+    <img class="mainBanner" src="images\prueba.jpg" />
 </section>
+
 <body>
+
+
+<!-- MODAL  -->
+
+    <div id="miModal" class="modal">
+        <div class="flex" id="flex">
+            <div class="contenido-modal">
+                <div class="modal-header flex">
+                       
+                    <img class="imageModal" src="images/imageone.jpg">
+                    <h1> The lion king </h1>
+                    <!-- <h4>The king has returned.</h4> -->
+                    <span class="close" id="close">&times;</span>
+                </div>
+                
+                    
+                <div class="modal-body">
+                    <p> Lorem ipsum dolor sit amet consectetur adipiscing elit
+                         purus fusce euismod per cras molestie turpis sapien eros etiam faucibus.</p>
+                    <h3>GENRES</h3>
+                    <p>Lelit purus volutpat nam nascetur.</p>
+                    <h3>RELEASE DATE</h3>
+                    <p>12 July 2019</p>
+                </div>
+                <div class="foo">
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- MODAL -->
+
     <section>
         <div class="movies-list">
             <h4>Popular Movies</h4>
             <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
             <div class="boxes">
                 <div>
-                    <img class="image" src="images/imageone.jpg">
+                    <a href="#" id="open"><img class="image" src="images/imageone.jpg"></a>
                     <p>Popular Movies</p>
                 </div>
                 <div>
-                    <img class="image" src="images/imagetwo.jpg">
+                    <a href="#" id="open"><img class="image" src="images/imagetwo.jpg"></a>
                     <p>Popular Movies</p>
                 </div>
                 <div>
-                    <img class="image" src="images/imagethree.jpg">
+                    <a href="#" id="open"><img class="image" src="images/imagethree.jpg"></a>
                     <p>Popular Movies</p>
                 </div>
                 <div>
-                    <img class="image" src="images/imagefour.jpg">
+                    <a href="#" id="open"><img class="image" src="images/imagefour.jpg"></a>
                     <p>Popular Movies</p>
                 </div>
                 <div>
-                    <img class="image" src="images/imagefive.jpg">
+                    <a href="#" id="open"><img class="image" src="images/imagefive.jpg"></a>
                     <p>Popular Movies</p>
                 </div>
             </div>
@@ -196,8 +228,8 @@
     </section>
 
 
-<!-- SEGUNDA PARTE -->
-<!-- <section>
+    <!-- SEGUNDA PARTE -->
+    <!-- <section>
     <div>
         <h4>Popular Movies</h4>
         <div class="boxes">
@@ -307,19 +339,21 @@
 </section> -->
 
 
-<!-- FOOTER -->
-<footer class="footer">
-    <nav>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> FACEBOOK</a>
-        <a href="https://twitter.com/"><i class="fab fa-twitter"></i> TWITTER</a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> YOUTUBE</a>
+    <!-- MODAL -->
 
-    </nav>
-    <hr>
-</footer>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <nav>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> FACEBOOK</a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter"></i> TWITTER</a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> YOUTUBE</a>
 
-</div>
+        </nav>
+        <hr>
+    </footer>
+
+    </div>
 </body>
 
 </html>
