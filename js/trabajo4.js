@@ -11,10 +11,39 @@ const customFetch = (apiKey, method, payload = '') => {
    .then (res => res)
 }
 
+const customFetchCategories = (apiKey, method, payload = '') => {
+  const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}`
+  let options = {
+    method: method,
+    headers: {'content-type': 'application/json'}
+  }
+  if(method !== 'GET' && payload) options.body = payload
+  return fetch (endPoint, options)
+   .then (response => response.json())
+   .then (res => (res))
+}
+
+
+
+customFetch(`/popular?api_key=${apiKey}`, 'GET')
+  .then (res => data = res )
+  //usando en customeFetch
+  `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}`
+
+  //la que nos dan en tp4 para la busqueda
+  `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${textoBusqueda}&page=${paginaActual}`
+
+//la que usamos para busqueda y que funciona
+   fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchText}`)
+    .then( res => res.json())
 
 let apiKey = '0b63f51adbe9c3ff14acc1ab92206b7d'
-let paginaActual = '3'
+let currentPage = 'currentPage + 1'
 
+
+// la que nos da el TP4 y no usamos pero es para home
+        `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+// la que nos da el TP4 y no usamos pero es para Listado por categoría
 fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${paginaActual}`)
  .then (response => response.json())
  .then (res => data = res) 
@@ -69,3 +98,31 @@ const openmodal = ()
 
 /// const printcategoriesResults = (movies
 )
+
+
+//  HOME PAGE
+
+  let categories = ['/top_rated','/popular','/upcoming','/now_playing']
+  const homeData = () =>
+  customFetchCategories(`?api_key=${apiKey}`, 'GET')
+    // fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
+    //.then(response => response.json())
+    //.then(res => {
+      //for(i=0; i<5;i++){
+     //   (res.results[i])
+    //  }
+    //})
+  
+  
+ 
+
+
+const printPopularHome = (data) => {
+  const ImageContainer = document.getElementById('imgContainer');
+    let movieTitle = document.createElement('img');
+    movieTitle.className = "image";
+    movieTitle.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
+    ImageContainer.appendChild(movieTitle);
+
+  };
+
