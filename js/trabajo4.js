@@ -1,6 +1,6 @@
 
 const customFetch = (apiKey, method, payload = '') => {
-  const endPoint = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+  const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}`
   let options = {
     method: method,
     headers: {'content-type': 'application/json'}
@@ -11,8 +11,11 @@ const customFetch = (apiKey, method, payload = '') => {
    .then (res => res)
 }
 
+customFetch(`&query=${searchText}`, 'GET')
+let categories = 'popular'
+
 const customFetchCategories = (apiKey, method, payload = '') => {
-  const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}`
+  const endPoint = `https://api.themoviedb.org/3/movie/${categories}?api_key=${apiKey}`
   let options = {
     method: method,
     headers: {'content-type': 'application/json'}
@@ -105,13 +108,13 @@ const openmodal = ()
   let categories = ['/top_rated','/popular','/upcoming','/now_playing']
   const homeData = () =>
   customFetchCategories(`?api_key=${apiKey}`, 'GET')
-    // fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
-    //.then(response => response.json())
-    //.then(res => {
-      //for(i=0; i<5;i++){
-     //   (res.results[i])
-    //  }
-    //})
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
+    .then(response => response.json())
+    .then(res => {
+      for(i=0; i<5;i++){
+        (res.results[i])
+      }
+    })
   
   
  
@@ -125,4 +128,30 @@ const printPopularHome = (data) => {
     ImageContainer.appendChild(movieTitle);
 
   };
+
+  const customFetchCategories = (apiKey, method, payload = '') => {
+    const endPoint = `https://api.themoviedb.org/3/movie/${categories}?api_key=${apiKey}`
+    let options = {
+      method: method,
+      headers: {'content-type': 'application/json'}
+    }
+    if(method !== 'GET' && payload) options.body = payload
+    return fetch (endPoint, options)
+     .then (response => response.json())
+     .then (res => (res))
+  }
+
+  const printPopularHome = (popularMovies) => {
+    const ImageContainer = document.getElementById('imgContainer');
+    popularMovies.forEach((popularMovie) => {
+      let searchResults = karin('img', 'image');
+      let title = popularMovies.poster_path;
+      popularMovie.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
+      
+      searchResults.innerText = title;
+      ImageContainer.appendChild(searchResults);
+  
+    })
+    };
+  
 
