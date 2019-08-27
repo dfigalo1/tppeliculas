@@ -95,9 +95,8 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${pag
 
 
 
-const karin = (elem, classname, content) => {
+const karin = (elem, classname) => {
   let thing = document.createElement(elem)
-  thing.innerText = content
   thing.classList.add(classname)
   return thing
 }

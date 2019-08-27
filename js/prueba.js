@@ -1,4 +1,4 @@
- // FUNCIONES REUTILIZABLES
+ // FUNCIONES REUTILIZABLES maybe
  
  let apiKey = '0b63f51adbe9c3ff14acc1ab92206b7d';
  let categories = ['popular', 'top_rated', 'upcoming', 'now_playing']
@@ -16,10 +16,9 @@
 }
 
  
-const karin = (elem, classname, content) => {
+const karin = (elem, classname) => {
   let thing = document.createElement(elem)
-  thing.innerText = content
-  thing.className = classname;
+  thing.classList.add(classname)
   return thing
 }
 
@@ -53,10 +52,6 @@ const karin = (elem, classname, content) => {
    
   //  HOME PAGE
 
-  
-
-
-
   const homeData = (category) => {
     return fetch (`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}`)
     .then (response => response.json())
@@ -69,6 +64,7 @@ const karin = (elem, classname, content) => {
 
   const printPopularHome = ({title, id,  poster_path}, idContainer) => {
     const ImageContainer = document.getElementById(idContainer);
+      let div = karin('div' ,"imgContainer");
       let a = karin('a', 'imageLink');
       a.href = '#';
       let imageResults = karin('img', 'image');
@@ -76,9 +72,10 @@ const karin = (elem, classname, content) => {
       let titleResults = karin('p', 'imagetitle');
       titleResults.innerText = title;
     
-      ImageContainer.appendChild(imageResults);
-      imageResults.appendChild(a);
-      ImageContainer.appendChild(titleResults); 
+      ImageContainer.appendChild(div);
+      div.appendChild(a);
+      a.appendChild(imageResults);
+      a.appendChild(titleResults); 
   
     };
 
