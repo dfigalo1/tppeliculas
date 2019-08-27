@@ -39,7 +39,6 @@ if(e.target == flex){
 
 
 
-<<<<<<< HEAD
 const customFetch = (apiKey, method, payload = '') => {
   const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}`
   let options = {
@@ -195,8 +194,4 @@ const printPopularHome = (data) => {
     })
     };
   
-=======
-// Apikey
-// 3e597a68977c4cb049bc74d03c2e7ea7
->>>>>>> 69a1d2f1ef41ade299543943564ae67a8c8d3772
 
