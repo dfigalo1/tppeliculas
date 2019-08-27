@@ -106,7 +106,7 @@ close.addEventListener('click',function(){
 });
 
 
-window.addEventListener('click',function(){
+window.addEventListener('click',function(e){
 if(e.target == flex){
     modal.style.display = 'none';
 }
