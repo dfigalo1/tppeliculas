@@ -120,9 +120,9 @@ body {
 
 /* NO ANDA ESTOOOO AAAAA */
 .results{
-  font-size: 10px;
-  color: #081c24;
-  background-color: transparent;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4);
+  font-size: 70px;
+  background-color:#000000;
 }
 
 .litImage{
