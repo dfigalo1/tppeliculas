@@ -125,6 +125,13 @@ body {
   background-color:#000000;
 }
 
+/* TEXTO IMAGEN */
+.imagetitle{
+color: #ffffff;
+margin: 5px 0px;
+font-size: 15px;
+}
+
 .litImage{
   height: 35px;
   width: 35px;
