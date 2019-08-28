@@ -30,6 +30,8 @@ const karin = (elem, classname) => {
     if ( searchText.length >= 3 || event.keyCode === 13 && searchText !== lastSearch){
         lastSearch = searchText
         customFetch(`&query=${searchText}`, 'GET')
+        //preguntar en clase por que no funciona con la /popular ? fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchText}`)
+        //.then( res => res.json())
         .then ( res => DropDownResults(res.results));
     } 
 
@@ -55,12 +57,12 @@ const karin = (elem, classname) => {
     .then (response => response.json())
     .then(res => {
       for(i=0; i<5;i++){
-        printHome(res.results[i], category)
+        printPopularHome(res.results[i], category)
       }
     })
   }
 
-  const printHome = ({title, id,  poster_path}, idContainer) => {
+  const printPopularHome = ({title, id,  poster_path}, idContainer) => {
     const ImageContainer = document.getElementById(idContainer);
       let div = karin('div' ,"imgContainer");
       let a = karin('a', 'imageLink');
@@ -70,14 +72,6 @@ const karin = (elem, classname) => {
       let titleResults = karin('p', 'imagetitle');
       titleResults.innerText = title;
     
-      a.onclick = () => {
-        let container = document.getElementById('modal')
-        modalData(id)
-        container.classList.remove('close-modal')
-        container.classList.add('modal-container')
-    }
-
-
       ImageContainer.appendChild(div);
       div.appendChild(a);
       a.appendChild(imageResults);
@@ -89,35 +83,31 @@ const karin = (elem, classname) => {
     categories.forEach(e => homeData(e))
 }
 
-
-// MODAL
-
-    
-    const printModal = () => {
-
-      let modal = document.getElementById('miModal');
-      let flex = document.getElementById('flex');
-      let boxes = document.getElementById('open');
-      let close = document.getElementById('close');
-      
-      
-      boxes.addEventListener('click',function(){
-          modal.style.display = 'block' ;
-      });
-      
-      
-      close.addEventListener('click',function(){
-          modal.styles.display = 'none';
-      });
-      
-      
-      window.addEventListener('click',function(){
-      if(e.target == flex){
-          modal.style.display = 'none';
-      }
-      })
-          };
-
   // LOAD MORE
 
   let currentPage = 'currentPage + 1'
+
+
+  
+// MODAL
+let modal = document.getElementById('miModal');
+let flex = document.getElementById('flex');
+let boxes = document.getElementById('open');
+let close = document.getElementById('close');
+
+
+boxes.addEventListener('click',function(){
+    modal.style.display = 'block' ;
+});
+
+
+close.addEventListener('click',function(){
+    modal.styles.display = 'none';
+});
+
+
+window.addEventListener('click',function(e){
+if(e.target == flex){
+    modal.style.display = 'none';
+}
+});
