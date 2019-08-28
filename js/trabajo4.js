@@ -90,6 +90,9 @@ let currentPage = 'currentPage + 1'
 fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${paginaActual}`)
  .then (response => response.json())
  .then (res => data = res) 
+// la que nos da el TP4 y no usamos pero es para Listado por categoría
+ `https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`
+ `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
 
 
 
