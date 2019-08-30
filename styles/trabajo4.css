@@ -202,10 +202,10 @@ footer .end-line{
   
 .nav .nav_logo {
     background-color: #081c24;
-    height: 75px;
+    height: 60px;
     width: 150px;
     display: flex;
-    margin-left: -2px;
+    margin-left: -15px;
 }
   
 .nav .nav_logo img{
