@@ -34,8 +34,21 @@ body {
  height: 530px;
 } 
 
+/* BAJAR LA IMAGEN DE HOME */
+@media only screen and (max-width: 500px){
+   .mainBanner{
+    margin: 0px 10px 10px 10px;
+    height: 200px;
+  }
+}
+
 .movies-list{
   padding: 20px 10px 15px 115px;
+}
+@media only screen and (max-width: 500px){
+  .movies-list{
+    padding: 10px 0px 8px 109px;
+  }
 }
 
 .boxes{
@@ -43,10 +56,10 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
-  margin: 30px 60px;
+  margin: 10px 3px;
 }
 
-.modalContainer a{
+.modalContainer{
   flex-direction: row;
   justify-content: space-between;
   padding: 0px -3px 0px 5px;
@@ -71,17 +84,21 @@ body {
   transition: 0.5s;
 } 
 
+@media only screen and (max-width: 500px){
+  .image{
+width: 160px;
+justify-content: space-between;
+  }
+}
+
 .ver-mas{
-  color: rgb(199, 199, 199);
+  color: rgb(121, 121, 121);
   margin: 40px 0px 0px 650px;
   font-size: 20px;
   font-weight: bold;
 }
 /*HOME HEADER */
 
-.home-header{
-  background-image: url(assets/batman.jpg)
-}
 
 .main-header{
   position: fixed;
@@ -125,7 +142,7 @@ body {
 .imagetitle{
 color: #ffffff;
 margin: 5px 0px;
-font-size: 15px;
+font-size: 10px;
 text-align: center;
 }
 
@@ -170,12 +187,19 @@ a:hover {
   max-width: 900px;
 }
 
-footer nav{
+.footer nav{
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
   clear: both;
 }
+
+@media only screen and (max-width: 500px){
+  .footer nav{
+display: none;
+  }
+}
+
 
 footer .end-line{
   display: none;
@@ -217,19 +241,12 @@ li a {
   padding: 8px 16px;
 }
 
-.sideBarItem--active {
-  background-color: #030521;
-  color: #fff;
-}
+/* ICONOS NAV */
+/* .nav_link-wrap {
+  background-color:#cbcef3;
+  color:#030521;
+} */
 
-.main{
-  margin: 0 0 0 95px;
-  padding: 75px 0 0 0; 
-}
-
-.main--active {
-  display: block;
-}
 
 /* MODAL */
 .flex{

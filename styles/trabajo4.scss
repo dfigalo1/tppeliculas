@@ -221,3 +221,20 @@ h3,h4
 	width: 200px 
 	border-radius: 30px 
 	opacity: 1 
+
+
+	// PRUEBA
+	.sideBarItem 
+	position: relative 
+	top: 1px 
+&.navlink 
+	border: 1px solid #f3772e 
+	background: #34495e 
+.movies-list 
+	border: 1px solid #ccc 
+	padding: 1em 
+	position: relative 
+	z-index: 10 
+&.active 
+	background: #f3772e 
+	z-index: 20 
