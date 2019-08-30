@@ -189,24 +189,36 @@ li a {
   padding: 8px 16px; }
 
 /* nav menu dinamico */
-.sideBarItem {
+.app {
+  position: relative; }
+
+.sideBar {
   position: relative;
   top: 1 px;
   background: #fff;
   border-right: none;
   z-index: 0; }
-  .sideBarItem.active {
+  .sideBar_item {
+    position: relative;
     background: #fff;
-    z-index: 20; }
+    z-index: 0; }
+    .sideBar_item.active {
+      background: #218871;
+      background: radial-gradient(circle, #218871 0%, #100b60 99%);
+      z-index: 20; }
 
 .categories {
   position: relative;
   z-index: 10; }
-  .categories.active {
-    background: #fff;
-    z-index: 20; }
+  .categories_item {
+    position: absolute;
+    left: 1000%; }
+    .categories_item.active {
+      z-index: 20;
+      position: relative;
+      left: 0%; }
 
-/* nav menu dinamico */
+/* termina nav menu dinamico */
 /* MODAL */
 .flex {
   width: 100%;

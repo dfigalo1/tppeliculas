@@ -15,18 +15,22 @@
 </head>
 
 <body onload="initialize()">
-    <div id="app">
-        <nav class="nav">
-            <a href="#" class="nav_logo" title="">
-                <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
-            </a>
+    <div class="app">
+        <nav class="nav ">
+            <ul class="sideBar">
+                <li class="sideBar_item ">
+                    <a href="#" class="nav_logo" title="">
+                        <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
+                    </a> 
+                </li>
+
             <div class="navHamburger">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-            <ul class="sideBar">
-                <li class="sideBarItem active">
+          
+                <li class="sideBar_item active">
                     <a href="#" class="nav_link">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/popular.png" />
@@ -34,7 +38,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="sideBarItem">
+                <li class="sideBar_item">
                     <a href="#" class="nav_link">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/top_rated.png" />
@@ -42,7 +46,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="sideBarItem">
+                <li class="sideBar_item">
                     <a href="#" class="nav_link">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/upcoming.png" />
@@ -50,7 +54,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="sideBarItem">
+                <li class="sideBar_item">
                     <a href="#" class="nav_link">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/now_playing.png" />
@@ -70,26 +74,13 @@
             </div>
 
         </header>
-
+    <div class="categories"> <!--este div envuelve a las sections 1 a 5-->
         <!-- section 1 Home -->
-       <section class="categories_items " id="text">
+       <section class="categories_item " id="text">
+
             <img class="mainBanner" src="images\prueba.jpg" />
         
-       
-            <!-- MODAL  -->
-
-          <div id="miModal" class="modal">
-                <div class="flex" id="flex">
-                        <span class="close" id="close"></span>
-                        <div class="foo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- MODAL -->
-
-        
-                <div class="modalContainer" id="open"  >
+                <div class="modalContainer" id="open">
                     <div class="movies-list">
                         <h4>Popular Movies</h4>
                         <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
@@ -127,13 +118,20 @@
                         </div>
                     </div>
                 </div>
-            </section>
-        
+        </section>
 
-
-            <!-- section 2 Popular-->
-             <section class="categorys_items active" id="text">
-    <div >
+                    <!-- MODAL  -->
+                    <div id="miModal" class="modal">
+                            <div class="flex" id="flex">
+                                    <span class="close" id="close"></span>
+                                    <div class="foo">
+                                    </div>
+                                </div>
+                            </div>
+                     
+                        <!-- MODAL -->
+<!-- section 2 Popular-->
+ <section class="categories_item active" id="text">
         <h4>Popular Movies</h4>
         <div class="boxes">
             <div>
@@ -238,10 +236,11 @@
                         </div>
                     </div>
                     <a class="ver-mas" href="#">Ver más</a>
-</section>
+ </section>
+           
 
 <!--section 3 Top Rated -->
-<section class="categorys_items " id="text">
+ <section class="categories_item " id="text">
     <div >
         <h4>Popular Movies</h4>
         <div class="boxes">
@@ -347,10 +346,10 @@
                         </div>
                     </div>
                     <a class="ver-mas" href="#">Ver más</a>
-</section>
+ </section>
 
 <!--section  4 Upcoming -->
-<section class="categorys_items " id="text">
+  <section class="categories_item " id="text">
     <div >
         <h4>Popular Movies</h4>
         <div class="boxes">
@@ -456,10 +455,10 @@
                         </div>
                     </div>
                     <a class="ver-mas" href="#">Ver más</a>
-</section>
+  </section>
 
 <!--section 5 Now Playing -->
-<section class="categorys_items " id="text">
+  <section class="categories_item " id="text">
     <div >
         <h4>Popular Movies</h4>
         <div class="boxes">
@@ -565,7 +564,10 @@
                         </div>
                     </div>
                     <a class="ver-mas" href="#">Ver más</a>
-</section>
+         </section>            
+    </div> <!--este div envuelve a las sections 1 a 5-->
+
+    </div>
             <!-- MODAL -->
             <script type="text/javascript" src="js/prueba.js"></script>
             <!-- FOOTER -->
