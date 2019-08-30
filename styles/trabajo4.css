@@ -198,11 +198,11 @@ li a {
   background: #fff;
   border-right: none;
   z-index: 0; }
-  .sideBar_item {
+  .sideBar .nav_link {
     position: relative;
     background: #fff;
     z-index: 0; }
-    .sideBar_item.active {
+    .sideBar .nav_link.active {
       background: #218871;
       background: radial-gradient(circle, #218871 0%, #100b60 99%);
       z-index: 20; }
@@ -239,7 +239,7 @@ li a {
   padding: 10px 40px 3px 110px; }
 
 .modal {
-  display: none;
+  
   /* SE COMENTA display:none; PARA VER EL MODAL; TIENE QUE FUNCIONAR PRESIONANDO LAS IMAGENES Y SIN COMENTARLO */
   position: fixed;
   z-index: 1;
@@ -298,3 +298,18 @@ h3, h4 {
   opacity: 1; }
 
 /*# sourceMappingURL=trabajo4.css.map */
+
+body .close {
+  color: white;
+  z-index: 21;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  cursor: pointer;
+}

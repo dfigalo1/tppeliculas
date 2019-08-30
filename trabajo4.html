@@ -16,21 +16,15 @@
 
 <body onload="initialize()">
     <div class="app">
-        <nav class="nav ">
-            <ul class="sideBar">
-                <li class="sideBar_item ">
-                    <a href="#" class="nav_logo" title="">
+        <div class="nav"  >
+            <ul class="sideBar" id="tabs" >
+                <li class="nav_logo"  id="tabso">
+                    <a href="#" class="nav_logo nav_link " title="">
                         <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
                     </a> 
                 </li>
-
-            <div class="navHamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-          
-                <li class="sideBar_item active">
+       
+                <li class="sideBar_item ">
                     <a href="#" class="nav_link">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/popular.png" />
@@ -62,8 +56,14 @@
                         </div>
                     </a>
                 </li>
-            </ul>
-        </nav>
+            </ul>           
+            
+            <div class="navHamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
         <!-- HEADER -->
 
         <header class="main-header">
@@ -76,11 +76,11 @@
         </header>
     <div class="categories"> <!--este div envuelve a las sections 1 a 5-->
         <!-- section 1 Home -->
-       <section class="categories_item " id="text">
+       <section class="categories_item active" id="text">
 
             <img class="mainBanner" src="images\prueba.jpg" />
         
-                <div class="modalContainer" id="open">
+                <div class="modalContainer" >
                     <div class="movies-list">
                         <h4>Popular Movies</h4>
                         <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
@@ -121,17 +121,26 @@
         </section>
 
                     <!-- MODAL  -->
+                    
                     <div id="miModal" class="modal">
                             <div class="flex" id="flex">
-                                    <span class="close" id="close"></span>
-                                    <div class="foo">
-                                    </div>
+                                    <div class="close" onclick= "closeModal()">
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas" 
+                                            data-icon="times" class="svg-inline--fa fa-times fa-w-11" 
+                                            role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
+                                            <path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 
+                                            12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 
+                                            75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19
+                                             0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 
+                                             12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 
+                                             0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+                                        </div>
                                 </div>
                             </div>
                      
                         <!-- MODAL -->
 <!-- section 2 Popular-->
- <section class="categories_item active" id="text">
+ <section class="categories_item " id="text">
         <h4>Popular Movies</h4>
         <div class="boxes">
             <div>

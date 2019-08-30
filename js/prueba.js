@@ -40,15 +40,14 @@ const karin = (elem, classname) => {
   const DropDownResults = (movies) => { 
     const container = document.getElementById('results');
     container.innerHTML = '';
+
     movies.forEach((movie) => {
       let searchResults = karin('a', 'resultName');
       searchResults.href = '#';
       
-      searchResults.onclick = () => {
-        modalData(movie.id)
-  
-    };
-      let title = movie.title === movie.origila_title ? movie.title:`${movie.title} (${movie.original_title})`;
+      searchResults.onclick = () => modalData(movie.id);
+      
+      let title = movie.title === movie.original_title ? movie.title:`${movie.title} (${movie.original_title})`;
       searchResults.innerText = title;
       container.appendChild(searchResults);
 
@@ -73,6 +72,7 @@ const karin = (elem, classname) => {
       
       let a = karin('a', 'imageLink');  
       a.href = '#'; 
+      //a.innerText = `onclick="openModal(${mov.id})">`
 
       let imageResults = karin('img', 'image');
       imageResults.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
@@ -86,31 +86,32 @@ const karin = (elem, classname) => {
   
     };
 
-  const initialize = () => {
-    categories.forEach(e => homeData(e))
-}
-
-//categoria popular 
-
-
-( function name(d) {
-  let tabs = d.querySelectorAll('.tabs_item');
-  let panels = d.querySelectorAll('.categories_items');
-  d.getElementById('tabs').addEventListener('click', e => {
-    if(e.target.classList.contains ('tabs_item')){
-      let i = (tabs.indexOf(e.target));
-      tabs.map(tab => tab.classList.remove('active'))
-      tabs[i].classList.add('active');
-      panels.map(panel => panel.classList.remove('active'))
-      panels[i].classList.add('active');
-
+    const initialize = () => {
+      categories.forEach(e => homeData(e))
     }
 
-  } )
+//categoria popular
+
+
+(function(d){
+  let sideBar = Array.prototype.slice.apply(d.querySelectorAll('.nav_link'));
+  let categoriesSection = Array.prototype.slice.apply(d.querySelectorAll('.categories_item'));
+  d.getElementById('tabs').addEventListener('click', (e) => {
+    if (e.target.classList.contains('nav_link')){
+      let i = sideBar.indexOf(e.target);
+      sideBar.map( (tab) => tab.classList.remove('active'));
+      sideBar[i].classList.add('active');
+      categoriesSection.map( (panel) => panel.classList.remove('active'));
+      categoriesSection[i].classList.add('active');
+    }
+  });
 })(document);
 
+const listAllMovies = (title, category) => {
+  allMovies(title, category, currentPage = 1)
+}
 
-let currentPage = '1';
+let currentPage =  'currentPage + 1';
 
 const PapularDataCategory = () => {
   return fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
@@ -158,79 +159,87 @@ const printPopularHome = ({title, id,  poster_path}, idContainer) => {
   
 // MODAL  
 
-
-const modalData = (movieId) =>  {
+ const modalData = movieId =>  {
   fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`)
   .then(response => response.json())
-  .then (data => {
-
-   let modal = document.getElementById('miModal');
-   let flex = document.getElementById('flex');
-   let boxes = document.getElementById('open');
-   let close = document.getElementById('close');
-// crear una sync and await ? para que espere a ejecutarse para cuando le hagamos un click
-
-  boxes.addEventListener('click',function(){
-      modal.style.display = 'block' ;
-  });
-
-
-  close.addEventListener('click',function(){
-     modal.styles.display = 'none';
-  });
-
-
-  window.addEventListener('click',function(e){
-  if(e.target == flex){
-      modal.style.display = 'none';
-  }
-  });
-
-
-  let modalWrapper = karin('div' ,"contenido-modal");
-  //agregar css para que esta imagen sea brackground a la otra imagen?
-  let modalBackDropImg = karin('img', 'backdropImage');
-    //modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${data.poster_path}`;
-  let modalHeader = karin('div' ,"modal-headerflex");
-  let modalImage = karin('img', 'imageModal');
-    //modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${data.backdrop_path}`;
-  let modalTitleWrap = karin('div', 'text');
-  let modalTitle = karin('h3');
-   //modalTitle.innerText = data.title;
-  let modalSubTitle = karin('h4');
-   modalSubTitle.innerText = data.tagline;
-
-  let modalBody = karin('div' ,"modal-body");
-  let modalDescription = karin('p' ,"modal-description");
-    //modalDescription.innerText = data.overview;
-  let modalGenreTitle = karin('h3');
-    modalGenreTitle.innerText = "GENRES";
-  let modalGenre = karin('p' ,"modal-Genre");
-
-    modalGenre.innerText = genres[name];//nose si llega al array con los nombres de los generos;
-
-  let modalrealeseDateTitle = karin('h3');
-    modalrealeseDateTitle.innerText = "RELEASE DATE";
-  let realeseDate = karin('p');
-    //realeseDate.innerText = data.release_date;
-
-
-  flex.appendChild(modalWrapper);
-  modalWrapper.appendChild(modalHeader);
-  modalWrapper.appendChild(modalBackDropImg)
-  modalHeader.appendChild(modalImage);
-  modalImage.appendChild(modalTitleWrap);
-  modalTitleWrap.appendChild(modalTitle);
-  modalTitleWrap.appendChild(modalSubTitle);
-  modalHeader.appendChild(close)
-
-  modalWrapper.appendChild(modalBody);
-  modalBody.appendChild(modalDescription);
-  modalBody.appendChild(modalGenreTitle);
-  modalBody.appendChild(modalGenre);
-  modalBody.appendChild(modalrealeseDateTitle);
-  modalBody.appendChild(realeseDate);
-
-})
+  .then(res => printModal(res)
+  )
 };
+
+const printModal = ({title, tagline, poster_path, backdrop_path, overview, release_date, genres}) => {
+
+let modal = document.getElementById('miModal');
+modal.style.display = "none";
+let flex = document.getElementById('flex');
+
+
+
+
+let modalWrapper = karin('div' ,"contenido-modal");
+//gregar css para que esta imagen sea brackground a la otra imagen?
+//let modalBackDropImg = karin('img', 'backdropImage');
+ //modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${backdrop_path}`;
+let modalHeader = karin('div' ,"modal-headerflex");
+let modalImage = karin('img', 'imageModal');
+ modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
+let modalTitle = karin('h1');
+modalTitle.innerText = title;
+let modalSubTitle = karin('h4');
+modalSubTitle.innerText = tagline;
+let span = karin('span',"close");
+span.id = "close";
+
+let modalBody = karin('div' ,"modal-body");
+let modalDescription = karin('p' ,"modal-description");
+modalDescription.innerText = overview;
+let modalGenreTitle = karin('h3');
+modalGenreTitle.innerText = "GENRES";
+
+//genres.forEach( e => {
+ // let ul = karin('ul', 'any')
+ // ul.id = 'genres';
+//  let genres = document.getElementsByClassName('any')
+ // let genre = document.createElement('li')
+ // genre.innerText = e.name
+ // genres.appendChild(g)
+//});
+
+let modalrealeseDateTitle = karin('h3');
+modalrealeseDateTitle.innerText = "RELEASE DATE";
+let realeseDate = karin('p');
+realeseDate.innerText = release_date;
+
+let footer = karin('div', 'foo' )
+
+
+flex.appendChild(modalWrapper);
+modalWrapper.appendChild(modalHeader);
+//modalWrapper.appendChild(modalBackDropImg)
+modalHeader.appendChild(modalImage);
+modalHeader.appendChild(modalTitle);
+modalHeader.appendChild(modalSubTitle);
+modalHeader.appendChild(span);
+
+
+modalWrapper.appendChild(modalBody);
+modalBody.appendChild(modalDescription);
+modalBody.appendChild(modalGenreTitle);
+//modalBody.appendChild(modalGenre);
+modalBody.appendChild(modalrealeseDateTitle);
+modalBody.appendChild(realeseDate);
+
+modalWrapper.appendChild(footer);
+
+}
+
+//<a href="#" onclick="closeModal()">x</a>
+
+const closeModal = () =>{
+  let container = document.getElementById('miModal')
+  container.classList.remove('modal-container')
+  container.classList.add('close-modal')
+
+}
+
+
  
