@@ -22,7 +22,7 @@ const karin = (elem, classname) => {
   return thing
 }
 
-  // SEARCH INPUT
+  // SEARCH INPUT semi completado 
   let lastSearch;
 
   const handleSearch = () => {
@@ -30,8 +30,6 @@ const karin = (elem, classname) => {
     if ( searchText.length >= 3 || event.keyCode === 13 && searchText !== lastSearch){
         lastSearch = searchText
         customFetch(`&query=${searchText}`, 'GET')
-        //preguntar en clase por que no funciona con la /popular ? fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchText}`)
-        //.then( res => res.json())
         .then ( res => DropDownResults(res.results));
     } 
 
@@ -44,7 +42,6 @@ const karin = (elem, classname) => {
     movies.forEach((movie) => {
       let searchResults = karin('a', 'resultName');
       searchResults.href = '#';
-      
       searchResults.onclick = () => modalData(movie.id);
       
       let title = movie.title === movie.original_title ? movie.title:`${movie.title} (${movie.original_title})`;
@@ -54,7 +51,7 @@ const karin = (elem, classname) => {
     })
   };
    
-  //  HOME PAGE
+  //  HOME PAGE compleatado
 
   const homeData = (category) => {
     return fetch (`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}`)
@@ -72,7 +69,7 @@ const karin = (elem, classname) => {
       
       let a = karin('a', 'imageLink');  
       a.href = '#'; 
-      //a.innerText = `onclick="openModal(${mov.id})">`
+      a.onclick = () => modalData(id);
 
       let imageResults = karin('img', 'image');
       imageResults.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
@@ -90,7 +87,7 @@ const karin = (elem, classname) => {
       categories.forEach(e => homeData(e))
     }
 
-//categoria popular
+// FUNCION NAVEGADOR en progreso mas o menos 
 
 
 (function(d){
@@ -107,57 +104,60 @@ const karin = (elem, classname) => {
   });
 })(document);
 
+// PAGINAS DE CATEGORIAS en progreso
+
 const listAllMovies = (title, category) => {
   allMovies(title, category, currentPage = 1)
 }
 
-let currentPage =  'currentPage + 1';
+let currentPage = 1
+
+//let otherCategories = ['popular1', 'popular2', 'popular3', 'popular4']
 
 const PapularDataCategory = () => {
-  return fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
+  return fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${currentPage}`)
   .then (response => response.json())
   .then(res => {
-    for(i=0; i<20;i++){
-      (res.results[i])
+    for(i=0; i<5;i++){
+      printPopularCategory (res.results[i])
     }
   })
 }
 
-// contruir la categoria popular una vez recibida la info 
-const printPopularHome = ({title, id,  poster_path}, idContainer) => {
-  const ImageContainer = document.getElementById(idContainer);
-    let div = karin('div' ,"imgContainer");
-    
-    let a = karin('a', 'imageLink');  
-    a.href = '#'; 
 
-    let imageResults = karin('img', 'image');
-    imageResults.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
-    let titleResults = karin('p', 'imagetitle');
-    titleResults.innerText = title;
+// contruir la categoria popular una vez recibida la info  
+const printPopularCategory = ({title, id,  poster_path}, idContainer) => {
+  const ImagContainer = document.getElementById(idContainer);
+  let divs = karin('div' ,"imgContainer");
   
-    ImageContainer.appendChild(div);
-    div.appendChild(a);
-    a.appendChild(imageResults);
-    a.appendChild(titleResults); 
+  let a = karin('a', 'imageLink');  
+  a.href = '#'; 
+  a.id = 'open';
+  a.onclick = () => modalData(id);
 
-  };
+  let imageResult = karin('img', 'image');
+  imageResult.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
+  let titleResult = karin('p', 'imagetitle');
+  titleResult.innerText = title;
 
- // inicializar  con un onclick en el navegador 
- //const initialize = () => {
-  //categories.forEach(e => homeData(e))
-//}
+  ImagContainer.appendChild(divs);
+  divs.appendChild(a);
+  a.appendChild(imageResult);
+  a.appendChild(titleResult); 
+
+};
+
+const popularInitialize = () => {(e => PapularDataCategory(e))
+}
 
 
-
-
-  // LOAD MORE
+  // LOAD MORE en progreso
 
   //let currentPage = 'currentPage + 1'
 
-
+// fin PAGINAS DE CATEGORIAS en progreso
   
-// MODAL  
+// MODAL  completado!
 
  const modalData = movieId =>  {
   fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`)
@@ -168,17 +168,21 @@ const printPopularHome = ({title, id,  poster_path}, idContainer) => {
 
 const printModal = ({title, tagline, poster_path, backdrop_path, overview, release_date, genres}) => {
 
-let modal = document.getElementById('miModal');
-modal.style.display = "none";
-let flex = document.getElementById('flex');
+  let modal = document.getElementById('miModal');
+  modal.style.display = 'block';
+  let flex = document.getElementById('flex');
+
 
 
 
 
 let modalWrapper = karin('div' ,"contenido-modal");
-//gregar css para que esta imagen sea brackground a la otra imagen?
+modalWrapper.id = "contenido-modal";
+
+//DESCOMENTAR Y AGREGAR SASS PARA QUE LA IMAGEN BACKDROP_PATH SE USE DE BACKGRAUNG IMAGE 
 //let modalBackDropImg = karin('img', 'backdropImage');
  //modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${backdrop_path}`;
+
 let modalHeader = karin('div' ,"modal-headerflex");
 let modalImage = karin('img', 'imageModal');
  modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
@@ -188,6 +192,8 @@ let modalSubTitle = karin('h4');
 modalSubTitle.innerText = tagline;
 let span = karin('span',"close");
 span.id = "close";
+span.innerText = 'x';
+span.onclick = () => closeModal();
 
 let modalBody = karin('div' ,"modal-body");
 let modalDescription = karin('p' ,"modal-description");
@@ -230,16 +236,12 @@ modalBody.appendChild(realeseDate);
 
 modalWrapper.appendChild(footer);
 
-}
-
-//<a href="#" onclick="closeModal()">x</a>
-
-const closeModal = () =>{
-  let container = document.getElementById('miModal')
-  container.classList.remove('modal-container')
-  container.classList.add('close-modal')
 
 }
 
-
- 
+const closeModal = () => {
+  const containerModal = document.getElementById('contenido-modal');
+  containerModal.remove('contenido-modal');
+  let mainText = document.getElementById('miModal');
+    mainText.style.display = "none";
+}

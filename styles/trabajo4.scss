@@ -290,9 +290,10 @@ li a {
 }
 
 .modal{
-  display:none; 
+  display: none; 
   /* SE COMENTA display:none; PARA VER EL MODAL; TIENE QUE FUNCIONAR PRESIONANDO LAS IMAGENES Y SIN COMENTARLO */
   position:fixed;
+
   z-index:1;
   overflow:auto;
  
@@ -320,7 +321,7 @@ li a {
 }
 
 .close{
-  color: #f2f2f2;
+  color: #9b1c1c;
   font-size:30px;
   font-weight:bold;
   padding: 0px 100px 250px 70px;
