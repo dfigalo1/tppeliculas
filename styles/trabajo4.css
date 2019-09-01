@@ -241,7 +241,8 @@ li a {
     z-index: 0; }
     .sideBar .nav_link.active {
       background: #081c24;
-      z-index: 20; }
+    
+      margin-left: 4px; }
 
 .categories {
   position: relative;
