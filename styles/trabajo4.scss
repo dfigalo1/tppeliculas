@@ -23,7 +23,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: #ffffff;
-  background: #081c24;
+  background: rgb(33,136,113);
+  background: radial-gradient(circle, rgba(33,136,113,1) 0%, rgba(16,11,96,1) 99%);
 }
 
 .mainBanner{
@@ -32,35 +33,32 @@ body {
  margin: 0px 110px 0px 110px;
  height: 530px;
 } 
-@media only screen and (max-width: 500px){
-  .mainBanner{
-      margin: 0px 10px 10px 10px;
-      height: 200px;
-  }
-}
 
 .movies-list{
   padding: 20px 10px 15px 115px;
 }
-@media only screen and (max-width: 500px){
-  .movies-list{
-      padding: 10px 0px 8px 109px;
-  }
-}
-  
+
 .boxes{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
-  margin: 10px 3px;
+  margin: 30px 60px;
 }
 
-.modalContainer{
+.modalContainer a{
   flex-direction: row;
   justify-content: space-between;
   padding: 0px -3px 0px 5px;
 }
+
+/* PARTE DOS */
+/* .boxes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 100px 10px 15px 115px;
+} */
 
 .image{
   width: 200px; 
@@ -72,12 +70,6 @@ body {
   opacity: 0.3;
   transition: 0.5s;
 } 
-@media only screen and (max-width: 500px){
-  .image{
-      width: 160px;
-      justify-content: space-between;
-  }
-}
 
 .ver-mas{
   color: rgb(199, 199, 199);
@@ -85,8 +77,12 @@ body {
   font-size: 20px;
   font-weight: bold;
 }
-
 /*HOME HEADER */
+
+.home-header{
+  background-image: url(assets/batman.jpg)
+}
+
 .main-header{
   position: fixed;
   z-index: 999;
@@ -120,17 +116,17 @@ body {
 }
 
 .results{
-  box-shadow: 0 0 6px 0 #00000066;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4);
   font-size: 70px;
-  background-color:#081c24;
+  background-color:#000000;
 }
 
 /* TEXTO IMAGEN */
 .imagetitle{
-  color: #ffffff;
-  margin: 5px 0px;
-  font-size: 10px;
-  text-align: center;
+color: #ffffff;
+margin: 5px 0px;
+font-size: 15px;
+text-align: center;
 }
 
 .litImage{
@@ -140,7 +136,7 @@ body {
 }
 
 .nav_link-title{
-  color: #c7c7c7;
+  color: rgb(199, 199, 199);
   margin-left: 2px;
   font-size: 10px;
 }
@@ -148,23 +144,22 @@ body {
 .all{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 5px;
-  margin: 30px 30px;
-  font-size: 15px;
+justify-content: space-between;
+ padding: 5px;
+margin: 30px 30px;
+font-size: 15px;
 }
 
 a {
   text-decoration: none;
   list-style: none;
-  color: #c7c7c7;
+  color: rgb(199, 199, 199);
   font-size: 10px;
   display: block;
   margin-left: 15px;
 }
-
 a:hover {
-  color: #ffffff;
+  color: white;
 }
 
 .footer {
@@ -175,16 +170,11 @@ a:hover {
   max-width: 900px;
 }
 
-.footer nav{
+footer nav{
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
-   clear: both;
-}
-@media only screen and (max-width: 500px){
-  .footer nav{
-      display: none;
-  }
+  clear: both;
 }
 
 footer .end-line{
@@ -200,10 +190,10 @@ footer .end-line{
 
 .nav .nav_logo {
   background-color: #081c24;
-  height: 60px;
+  height: 75px;
   width: 150px;
   display: flex;
-  margin-left: -15px;
+  margin-left: -2px;
 }
 
 .nav .nav_logo img{
@@ -242,14 +232,15 @@ li a {
 	border-right: none;
 	z-index: 0;
 
-	&_item {
+	.nav_link {
 
 		position: relative;
 		background:#fff;
 		z-index: 0;
 		
 		&.active {
-		background:#081c24;
+		background: #218871;
+		background: radial-gradient(circle, #218871 0%, #100b60 99%);;
 		z-index: 20;
 		}
 	}
@@ -274,96 +265,95 @@ li a {
 }
 
 /* termina nav menu dinamico */
+
+
 /* MODAL */
-.flex {
-  width: 100%;
-  height: 100%;
-/* TEXTO Y X */
+.flex{
+  width:100%;
+  height:100%;
+ /* TEXTO Y X */
   justify-content: space-between;
-  align-items: center; 
+  align-items:center;
 }
 
-.text h4 {
-  color: #8185c2;
-  font-weight: bold;
-  font-size: 30px;
-  padding: 10px 40px 3px 110px; 
-}
-
-.text h5 {
-  color: #8185c2;
-  font-size: 20px;
-  padding: 10px 40px 3px 110px; 
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  overflow: auto;
-  top: 90px;
-  width: 100%;
-  height: 100%;
-  background: #00000073; 
-}
-
-.contenido-modal {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  width: 40%;
-/* ESTA PARTE ENSANCHA ELMDOAL */
-  box-shadow: 0 0 6px 0 #00000066;
-  animation-name: modal;
-  animation-duration: 1s;
-  padding: 3px 3px; 
-}
-
-/* ANIMATION */
-@keyframes modal {
-from {
-    top: -330px;
-    opacity: 0; 
-}
-to {
-    top: 0;
-    opacity: 1; 
-}
-}
-
-.close {
-  color: #f2f2f2;
-  font-size: 30px;
-  font-weight: bold;
-  padding: 0px 100px 250px 70px; 
-}
-
-.modal-header, .foo {
-  padding: 7px 0px;
-  background: #34495e;
-  color: #f2f2f2; 
-}
-
-p {
-  text-align: justify;
-  color: #030521; 
-}
-
-h3, h4 {
-  text-align: justify;
-  color: #303261;
-  font-weight: bold; 
-}
-
-.modal-body {
-  padding: 20px 0px 5px 0px; 
-}
-
-.imageModal {
+.text h4{
+  color:#030521;
+  font-weight:bold;
+  font-size:30px;
   padding: 10px 40px 3px 110px;
-  width: 150px;
-  border-radius: 30px;
-  opacity: 1; 
 }
 
-/*# sourceMappingURL=trabajo4.css.map */
+.text h5{
+  color:#cbcef3;
+  font-size:20px;
+  padding: 10px 40px 3px 110px;
+}
+
+.modal{
+  display: none; 
+  /* SE COMENTA display:none; PARA VER EL MODAL; TIENE QUE FUNCIONAR PRESIONANDO LAS IMAGENES Y SIN COMENTARLO */
+  position:fixed;
+
+  z-index:1;
+  overflow:auto;
+ 
+  top:90px;
+  width:100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.452);
+}
+
+.contenido-modal{
+  position:relative;
+  background-color:#fefefe;
+  margin:auto;
+  width:40%; 
+  /* ESTA PARTE ENSANCHA ELMDOAL */
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .4);
+  animation-name:modal;
+  animation-duration:1s;
+  padding:3px 3px;
+}
+/* ANIMACION */
+@keyframes modal{
+  from{top:-330px; opacity:0;}
+  to{top:0; opacity:1;}
+}
+
+.close{
+  color: #9b1c1c;
+  font-size:30px;
+  font-weight:bold;
+  padding: 0px 100px 250px 70px;
+}
+
+
+.modal-header, .foo{
+padding:7px 0px;
+background: #34495e;
+color: #f2f2f2;
+}
+
+p{
+  text-align: justify;
+  color:#030521;
+}
+
+h3,h4{
+  text-align: justify;
+  color:#030521;
+  font-weight:bold;
+}
+
+.modal-body{
+  padding: 20px 0px 5px 0px;
+
+}
+
+.imageModal{
+  padding: 10px 40px 3px 110px;
+  width: 150px; 
+  border-radius: 30px;
+  opacity: 1;
+}
+

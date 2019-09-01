@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic" rel="stylesheet">
@@ -17,22 +16,16 @@
 
 <body onload="initialize()">
     <div class="app">
-        <nav class="nav ">
-            <ul class="sideBar">
-                <li class="sideBar_item ">
-                    <a href="#" class="nav_logo" title="">
+        <div class="nav">
+            <ul class="sideBar" id="tabs">
+                <li class="nav_logo" id="tabso">
+                    <a href="#" class="nav_logo nav_link " title="">
                         <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
                     </a>
                 </li>
 
-                <div class="navHamburger">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-
-                <li class="sideBar_item active">
-                    <a href="#" class="nav_link">
+                <li class="sideBar_item ">
+                    <a href="#" class="nav_link" onclick="popularInitialize()">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/popular.png" />
                             <span class="nav_link-title">Popular</span>
@@ -64,7 +57,14 @@
                     </a>
                 </li>
             </ul>
-        </nav>
+
+            <div class="navHamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
         <!-- HEADER -->
         <header class="main-header">
             <div class="searchBar">
@@ -72,442 +72,92 @@
                 <div class="results" id="results"></div>
             </div>
         </header>
+        <div class="categories">
+            <!--este div envuelve a las sections 1 a 5-->
 
-        <!-- MODAL  -->
-        <div id="miModal" class="modal">
-            <div class="flex" id="flex">
-                <span class="close" id="close"></span>
-                <div class="foo">
-                </div>
+            <!-- section 1 Home -->
+            <section class="categories_item active" id="text">
+                <img class="mainBanner" src="images\prueba.jpg" />
+
+                 <!-- MODAL  -->
+            <div id="miModal" class="modal">
+                <div class="flex" id="flex"></div>
             </div>
+            <!-- MODAL -->
+
+
+                <div class="modalContainer">
+                    <div class="movies-list">
+                        <h4>Popular Movies</h4>
+                        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+                        <div class="boxes" id="popular"></div>
+                    </div>
+                    <div class="movies-list">
+                        <h4>Top Rated Movies</h4>
+                        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+                        <div class="boxes" id="top_rated"></div>
+                    </div>
+                    <div class="movies-list">
+                        <h4>Upcoming Movies</h4>
+                        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+                        <div class="boxes" id="upcoming"></div>
+                    </div>
+                    <div class="movies-list">
+                        <h4>Now Playing Movies</h4>
+                        <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
+                        <div class="boxes" id="now_playing"></div>
+                    </div>
+                </div>
+            </section>
+
+           
+
+            <!-- section 2 Popular-->
+            <section class="categories_item " id="text">
+                <h4>Popular Movies</h4>
+                <div class="boxes" id="popular1"></div>
+                <div class="boxes" id="popular2"></div>
+                <div class="boxes" id="popular3"></div>
+                <div class="boxes" id="popular4"></div>
+                <a class="ver-mas" href="#">Ver más</a>
+            </section>
+
+            <!--section 3 Top Rated -->
+            <section class="categories_item " id="text">
+                <div>
+                    <h4>Top Rated</h4>
+                    <div class="boxes" id="popular1"></div>
+                    <div class="boxes" id="popular2"></div>
+                    <div class="boxes" id="popular3"></div>
+                    <div class="boxes" id="popular4"></div>
+                    <a class="ver-mas" href="#">Ver más</a>
+                </div>
+            </section>
+
+            <!--section  4 Upcoming -->
+            <section class="categories_item " id="text">
+                <div>
+                    <h4>Upcoming</h4>
+                    <div class="boxes" id="popular1"></div>
+                    <div class="boxes" id="popular2"></div>
+                    <div class="boxes" id="popular3"></div>
+                    <div class="boxes" id="popular4"></div>
+                    <a class="ver-mas" href="#">Ver más</a>
+                </div>
+            </section>
         </div>
+        <!--este div envuelve a las sections 1 a 5-->
+
     </div>
     <!-- MODAL -->
-
-<div class="categories">
-    <!--este div envuelve a las sections 1 a 5-->
-
-    <!-- section 1 Home -->
-    <section class="categories_items " id="text">
-        <img class="mainBanner" src="images\prueba.jpg" />
-
-        <div class="modalContainer" id="open">
-            <div class="movies-list">
-                <h4>Popular Movies</h4>
-                <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
-                <div class="boxes" id="popular">
-                </div>
-            </div>
-
-            <div class="movies-list">
-                <h4>Top Rated Movies</h4>
-                <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
-                <div class="boxes" id="top_rated">
-                </div>
-            </div>
-            <div class="movies-list">
-                <h4>Upcoming Movies</h4>
-                <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
-                <div class="boxes" id="upcoming">
-                </div>
-            </div>
-            <div class="movies-list">
-                <h4>Now Playing Movies</h4>
-                <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
-                <div class="boxes" id="now_playing">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- section 2 Popular-->
-    <section class="categorys_items active" id="text">
-        <div>
-            <h4>Popular Movies</h4>
-            <div class="boxes">
-                <div>
-                    <img class="image" src="images/imageone.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagetwo.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagethree.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagefour.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagefive.jpg">
-                </div>
-            </div>
-            <div>
-                <div class="boxes">
-                    <div>
-                        <img class="image" src="images/imageone.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagetwo.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagethree.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagefour.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagefive.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="boxes">
-                        <div>
-                            <img class="image" src="images/imageone.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagetwo.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagethree.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagefour.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagefive.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="boxes">
-                            <div>
-                                <img class="image" src="images/imageone.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagetwo.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagethree.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagefour.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagefive.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                        </div>
-                        <a class="ver-mas" href="#">Ver más</a>
-    </section>
-
-    <!--section 3 Top Rated -->
-    <section class="categorys_items " id="text">
-        <div>
-            <h4>Popular Movies</h4>
-            <div class="boxes">
-                <div>
-                    <img class="image" src="images/imageone.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagetwo.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagethree.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagefour.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagefive.jpg">
-                </div>
-            </div>
-            <div>
-                <div class="boxes">
-                    <div>
-                        <img class="image" src="images/imageone.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagetwo.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-
-                    <div>
-                        <img class="image" src="images/imagethree.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-
-                    <div>
-                        <img class="image" src="images/imagefour.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-
-                    <div>
-                        <img class="image" src="images/imagefive.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="boxes">
-                        <div>
-                            <img class="image" src="images/imageone.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagetwo.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-
-                        <div>
-                            <img class="image" src="images/imagethree.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-
-                        <div>
-                            <img class="image" src="images/imagefour.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-
-                        <div>
-                            <img class="image" src="images/imagefive.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="boxes">
-                            <div>
-                                <img class="image" src="images/imageone.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagetwo.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagethree.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagefour.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagefive.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                        </div>
-                        <a class="ver-mas" href="#">Ver más</a>
-    </section>
-
-    <!--section  4 Upcoming -->
-    <section class="categorys_items " id="text">
-        <div>
-            <h4>Popular Movies</h4>
-            <div class="boxes">
-                <div>
-                    <img class="image" src="images/imageone.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagetwo.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagethree.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagefour.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagefive.jpg">
-                </div>
-            </div>
-            <div>
-                <div class="boxes">
-                    <div>
-                        <img class="image" src="images/imageone.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagetwo.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagethree.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagefour.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagefive.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="boxes">
-                        <div>
-                            <img class="image" src="images/imageone.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagetwo.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagethree.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagefour.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagefive.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="boxes">
-                            <div>
-                                <img class="image" src="images/imageone.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagetwo.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div> <img class="image" src="images/imagethree.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagefour.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagefive.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                        </div>
-                        <a class="ver-mas" href="#">Ver más</a>
-    </section>
-
-    <!--section 5 Now Playing -->
-    <section class="categorys_items " id="text">
-        <div>
-            <h4>Popular Movies</h4>
-            <div class="boxes">
-                <div>
-                    <img class="image" src="images/imageone.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagetwo.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagethree.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagefour.jpg">
-                </div>
-                <div>
-                    <img class="image" src="images/imagefive.jpg">
-                </div>
-            </div>
-            <div>
-                <div class="boxes">
-                    <div>
-                        <img class="image" src="images/imageone.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagetwo.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagethree.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagefour.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                    <div>
-                        <img class="image" src="images/imagefive.jpg">
-                        <p>Popular Movies</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="boxes">
-                        <div>
-                            <img class="image" src="images/imageone.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagetwo.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagethree.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagefour.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                        <div>
-                            <img class="image" src="images/imagefive.jpg">
-                            <p>Popular Movies</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="boxes">
-                            <div>
-                                <img class="image" src="images/imageone.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagetwo.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-
-                            <div> <img class="image" src="images/imagethree.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagefour.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                            <div>
-                                <img class="image" src="images/imagefive.jpg">
-                                <p>Popular Movies</p>
-                            </div>
-                        </div>
-                        <a class="ver-mas" href="#">Ver más</a>
-    </section>
-</div>
-
-    <!-- MODAL -->
     <script type="text/javascript" src="js/prueba.js"></script>
-
+    <!-- FOOTER -->
     <footer class="footer">
         <nav>
             <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> FACEBOOK</a>
             <a href="https://twitter.com/"><i class="fab fa-twitter"></i> TWITTER</a>
             <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> INSTAGRAM</a>
             <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> YOUTUBE</a>
-
         </nav>
         <hr>
     </footer>
