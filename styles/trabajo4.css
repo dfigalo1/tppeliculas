@@ -137,12 +137,12 @@ body {
 .litImage{
     height: 30px;
     width: 30px;
-    margin-left: -1px;
+    margin-left: 1px;
+    margin-top: 20px;
 }
   
 .nav_link-title{
     color: #918f8f;
-    margin-left: 2px;
     font-size: 10px;
 
 }
@@ -203,9 +203,9 @@ footer .end-line{
 .nav .nav_logo {
   background-color: #081c24;
   height: 60px;
-  width: 100px;
-  display: flex;
-  margin-left: 0px;
+  width: 90px;
+margin-top: -20px;
+  margin-left: -20px;
 }
 
 ul {
@@ -227,24 +227,28 @@ li a {
 
 /* nav menu dinamico */
 .app {
-  position: relative; }
+  position: relative;
+   }
 
 .sideBar {
   position: relative;
-  top: 1 px;
   background: #fff;
   border-right: none;
-  z-index: 0px; }
+ margin-left: 2px;
+    margin-top: 20px;
+ }
   .sideBar .nav_link {
     position: relative;
+    margin-left: 14px;
 
-    z-index: 0; }
+
+     }
     .sideBar .nav_link.active {
+      margin-top: 20px;
       background: #081c24;
-    
-      margin-left: 4px; }
+      margin-left: 10px; }
 
-.categories {
+  .categories {
   position: relative;
   z-index: 10; }
   .categories_item {
@@ -279,7 +283,6 @@ li a {
 
 .modal {
   display: none;
-  /* SE COMENTA display:none; PARA VER EL MODAL; TIENE QUE FUNCIONAR PRESIONANDO LAS IMAGENES Y SIN COMENTARLO */
   position: fixed;
   z-index: 1;
   overflow: auto;
@@ -313,7 +316,7 @@ li a {
 
 
 .close {
-  color: #635d5d;
+  color: #34495e;
   font-size: 25px;
   font-weight: bold;
   padding: 0px 0px 0px 500px;
@@ -323,7 +326,7 @@ cursor: pointer;
 .modal-header, .foo {
   padding: 7px 0px;
   background: #34495e;
-  color: #f2f2f2; }
+}
 
 p {
   text-align: justify;
@@ -331,7 +334,7 @@ p {
 
 h3, h4 {
   text-align: justify;
-  color: #030521;
+  color: #010318;
   font-weight: bold; }
 
 
