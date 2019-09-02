@@ -93,7 +93,6 @@ const karin = (elem, classname) => {
 
 
 (function(d){
-<<<<<<< HEAD
   let sideBar = Array.prototype.slice.apply(d.querySelectorAll('ul.sideBar > li.sideBar_item > .nav_link > .litImage'));
   let categoriesSection = Array.prototype.slice.apply(d.querySelectorAll('.categories_item'));
   d.getElementById('tabs').addEventListener('click', (e) => {
@@ -102,16 +101,6 @@ const karin = (elem, classname) => {
       sideBar.map((tab) => tab.classList.remove('active'));
       sideBar[i].classList.add('active');
       categoriesSection.map((panel) => panel.classList.remove('active'));
-=======
-  let sideBar = Array.prototype.slice.apply(d.querySelectorAll('.nav_link'));
-  let categoriesSection = Array.prototype.slice.apply(d.querySelectorAll('.categories_item'));
-  d.getElementById('tabs').addEventListener('click', (e) => {
-    if (e.target.classList.contains('nav_link')){
-      let i = sideBar.indexOf(e.target);
-      sideBar.map( (tab) => tab.classList.remove('active'));
-      sideBar[i].classList.add('active');
-      categoriesSection.map( (panel) => panel.classList.remove('active'));
->>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
       categoriesSection[i].classList.add('active');
     }
   });
@@ -124,7 +113,6 @@ const listAllMovies = (title, category) => {
 }
 
 let currentPage = 1
-<<<<<<< HEAD
 
 
 const PapularDataCategory = (category) => {
@@ -217,98 +205,6 @@ modalDescription.innerText = overview;
 let modalGenreTitle = karin('h3');
 modalGenreTitle.innerText = "GENRES";
 
-=======
-
-//let otherCategories = ['popular1', 'popular2', 'popular3', 'popular4']
-
-const PapularDataCategory = () => {
-  return fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${currentPage}`)
-  .then (response => response.json())
-  .then(res => {
-    for(i=0; i<5;i++){
-      printPopularCategory (res.results[i])
-    }
-  })
-}
-
-
-// contruir la categoria popular una vez recibida la info  
-const printPopularCategory = ({title, id,  poster_path}, idContainer) => {
-  const ImagContainer = document.getElementById(idContainer);
-  let divs = karin('div' ,"imgContainer");
-  
-  let a = karin('a', 'imageLink');  
-  a.href = '#'; 
-  a.id = 'open';
-  a.onclick = () => modalData(id);
-
-  let imageResult = karin('img', 'image');
-  imageResult.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
-  let titleResult = karin('p', 'imagetitle');
-  titleResult.innerText = title;
-
-  ImagContainer.appendChild(divs);
-  divs.appendChild(a);
-  a.appendChild(imageResult);
-  a.appendChild(titleResult); 
-
-};
-
-const popularInitialize = () => {(e => PapularDataCategory(e))
-}
-
-
-  // LOAD MORE en progreso
-
-  //let currentPage = 'currentPage + 1'
-
-// fin PAGINAS DE CATEGORIAS en progreso
-  
-// MODAL  completado!
-
- const modalData = movieId =>  {
-  fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`)
-  .then(response => response.json())
-  .then(res => printModal(res)
-  )
-};
-
-const printModal = ({title, tagline, poster_path, backdrop_path, overview, release_date, genres}) => {
-
-  let modal = document.getElementById('miModal');
-  modal.style.display = 'block';
-  let flex = document.getElementById('flex');
-
-
-
-
-
-let modalWrapper = karin('div' ,"contenido-modal");
-modalWrapper.id = "contenido-modal";
-
-//DESCOMENTAR Y AGREGAR SASS PARA QUE LA IMAGEN BACKDROP_PATH SE USE DE BACKGRAUNG IMAGE 
-//let modalBackDropImg = karin('img', 'backdropImage');
- //modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${backdrop_path}`;
-
-let modalHeader = karin('div' ,"modal-headerflex");
-let modalImage = karin('img', 'imageModal');
- modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
-let modalTitle = karin('h1');
-modalTitle.innerText = title;
-let modalSubTitle = karin('h4');
-modalSubTitle.innerText = tagline;
-let span = karin('span',"close");
-span.id = "close";
-span.innerText = 'x';
-span.onclick = () => closeModal();
-
-let modalBody = karin('div' ,"modal-body");
-let modalDescription = karin('p' ,"modal-description");
-modalDescription.innerText = overview;
-let modalGenreTitle = karin('h3');
-modalGenreTitle.innerText = "GENRES";
-
->>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
 //genres.forEach( e => {
  // let ul = karin('ul', 'any')
  // ul.id = 'genres';
