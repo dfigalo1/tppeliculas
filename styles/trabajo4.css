@@ -1,300 +1,54 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+/*
+Error: Invalid CSS after "...ition: relative": expected "{", was ";"
+        on line 241 of /Users/graceland/Documents/tppeliculas/styles/trabajo4.scss
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: #ffffff;
-  background: #218871;
-  background: radial-gradient(circle, #218871 0%, #100b60 99%); }
+236: 	.litImage{
+237: =======
+238: 	.nav_link {
+239: >>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
+240: 
+241: 		position: relative;
+242: 		background:#fff;
+243: 		z-index: 0;
+244: 		
+245: 		&.active {
+246: 		background: #218871;
 
-.mainBanner {
-  position: relative;
-  display: block;
-  margin: 0px 110px 0px 110px;
-  height: 530px; }
-
-.movies-list {
-  padding: 20px 10px 15px 115px; }
-
-.boxes {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px;
-  margin: 30px 60px; }
-
-.modalContainer a {
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0px -3px 0px 5px; }
-
-/* PARTE DOS */
-/* .boxes{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 100px 10px 15px 115px;
-} */
-.image {
-  width: 200px;
-  border-radius: 30px;
-  opacity: 1; }
-
-.image:hover {
-  opacity: 0.3;
-  transition: 0.5s; }
-
-.ver-mas {
-  color: #c7c7c7;
-  margin: 40px 0px 0px 650px;
-  font-size: 20px;
-  font-weight: bold; }
-
-/*HOME HEADER */
-.home-header {
-  background-image: url(assets/batman.jpg); }
-
-.main-header {
-  position: fixed;
-  z-index: 999;
-  width: 100vw;
-  height: 75px;
-  margin-left: 106px; }
-
-.main-header .searchBar {
-  position: relative;
-  height: 100%;
-  background-color: #ffffff; }
-
-.searchBar input {
-  display: block;
-  width: 100%;
-  padding: 30px 60px 15px 45px;
-  outline: none;
-  border: 0;
-  background-color: transparent;
-  color: #081c24;
-  font-weight: 300;
-  font-size: 16px; }
-
-.searchBar .search {
-  height: 15px;
-  width: 15px;
-  padding: 5px 40px 80px 45px; }
-
-.results {
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
-  font-size: 70px;
-  background-color: #000000; }
-
-/* TEXTO IMAGEN */
-.imagetitle {
-  color: #ffffff;
-  margin: 5px 0px;
-  font-size: 15px;
-  text-align: center; }
-
-.litImage {
-  height: 35px;
-  width: 35px;
-  margin-left: 5px; }
-
-.nav_link-title {
-  color: #c7c7c7;
-  margin-left: 2px;
-  font-size: 10px; }
-
-.all {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px;
-  margin: 30px 30px;
-  font-size: 15px; }
-
-a {
-  text-decoration: none;
-  list-style: none;
-  color: #c7c7c7;
-  font-size: 10px;
-  display: block;
-  margin-left: 15px; }
-
-a:hover {
-  color: white; }
-
-.footer {
-  margin: 0 auto;
-  overflow: hidden;
-  width: 90%;
-  min-width: 600px;
-  max-width: 900px; }
-
-footer nav {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-  clear: both; }
-
-footer .end-line {
-  display: none; }
-
-.nav {
-  position: fixed;
-  width: 95px;
-  height: 100vh;
-  z-index: 999; }
-
-.nav .nav_logo {
-  background-color: #081c24;
-  height: 75px;
-  width: 150px;
-  display: flex;
-  margin-left: -2px; }
-
-.nav .nav_logo img {
-  width: 50px;
-  margin-left: 27px; }
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  position: fixed;
-  height: 100%; }
-
-li a {
-  display: block;
-  color: #f3772e;
-  width: 60px;
-  padding: 8px 16px; }
-
-/* nav menu dinamico */
-.app {
-  position: relative; }
-
-.sideBar {
-  position: relative;
-  top: 1 px;
-  background: #fff;
-  border-right: none;
-  z-index: 0; }
-  .sideBar .litImage {
-    position: relative;
-    background: #fff;
-    z-index: 0; }
-    .sideBar .litImage.active {
-      background: #218871;
-      background: radial-gradient(circle, #218871 0%, #100b60 99%);
-      z-index: 20; }
-
-.categories {
-  position: relative;
-  z-index: 10; }
-  .categories_item {
-    position: absolute;
-    left: 1000%; }
-    .categories_item.active {
-      z-index: 20;
-      position: relative;
-      left: 0%; }
-
-/* termina nav menu dinamico */
-/* MODAL */
-.flex {
-  width: 100%;
-  height: 100%;
-  /* TEXTO Y X */
-  justify-content: space-between;
-  align-items: center; }
-
-.text h4 {
-  color: #a5a6bb;
-  font-weight: bold;
-  font-size: 30px;
-  padding: 10px 40px 3px 110px; }
-
-.text h5 {
-  color: #cbcef3;
-  font-size: 20px;
-  padding: 10px 40px 3px 110px; }
-
-.modal {
-  display: none;
-  /* SE COMENTA display:none; PARA VER EL MODAL; TIENE QUE FUNCIONAR PRESIONANDO LAS IMAGENES Y SIN COMENTARLO */
-  position: fixed;
-  z-index: 1;
-  overflow: auto;
-  top: 90px;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.452); }
-
-.contenido-modal {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  width: 40%;
-  /* ESTA PARTE ENSANCHA ELMDOAL */
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.4);
-  animation-name: modal;
-  animation-duration: 1s;
-  padding: 3px 3px; }
-
-/* ANIMACION */
-@keyframes modal {
-  from {
-    top: -330px;
-    opacity: 0; }
-  to {
-    top: 0;
-    opacity: 1; } }
-.close {
-  color: #5c2727;
-  font-size: 30px;
-  font-weight: bold;
-  padding: 0px 100px 250px 70px; }
-
-.modal-header, .foo {
-  padding: 7px 0px;
-  background: #34495e;
-  color: #f2f2f2; }
-
-p {
-  text-align: justify;
-  color: #030521; }
-
-h3, h4 {
-  text-align: justify;
-  color: #030521;
-  font-weight: bold; }
-
-.modal-body {
-  padding: 20px 0px 5px 0px; }
-
-.imageModal {
-  padding: 10px 40px 3px 110px;
-  width: 150px;
-  border-radius: 30px;
-  opacity: 1; }
-
-/*# sourceMappingURL=trabajo4.css.map */
+Backtrace:
+/Users/graceland/Documents/tppeliculas/styles/trabajo4.scss:241
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:677:in `block'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:686:in `block_contents'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+/Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+/Applications/Koala.app/Contents/Resources/app.nw/bin/sass:22:in `load'
+/Applications/Koala.app/Contents/Resources/app.nw/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ition: relative\": expected \"{\", was \";\"\A         on line 241 of /Users/graceland/Documents/tppeliculas/styles/trabajo4.scss\A \A 236: 	.litImage{\A 237: =======\A 238: 	.nav_link {\A 239: >>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9\A 240: \A 241: 		position: relative;\A 242: 		background:#fff;\A 243: 		z-index: 0;\A 244: 		\A 245: 		&.active {\A 246: 		background: #218871;"; }

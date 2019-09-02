@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles\trabajo4.css">
-
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images\favicon (1).ico" type="image/x-icon">
     <title>Peliculas G&D</title>
 </head>
 
 <body onload="initialize()">
     <div class="app">
+<<<<<<< HEAD
         <div class="nav"  >
             <ul class="sideBar" id="tabs" >
             <li class="sideBar_item ">
@@ -23,11 +24,21 @@
                         <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="litImage ">
                     </a> 
             </li>
+=======
+        <div class="nav">
+            <ul class="sideBar" id="tabs">
+                <li class="nav_logo" id="tabso">
+                    <a href="#" class="nav_logo nav_link " title="">
+                        <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
+                    </a>
+                </li>
+
+>>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
                 <li class="sideBar_item ">
                     <a href="#" class="nav_link" onclick="popularInitialize()">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/popular.png" />
-                            <span class="nav_link-title">Papular</span>
+                            <span class="nav_link-title">Popular</span>
                         </div>
                     </a>
                 </li>
@@ -40,7 +51,11 @@
                     </a>
                 </li>
                 <li class="sideBar_item">
+<<<<<<< HEAD
                     <a href="#" class="nav_link" >
+=======
+                    <a href="#" class="nav_link">
+>>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/upcoming.png" />
                             <span class="nav_link-title">Upcoming</span>
@@ -55,6 +70,7 @@
                         </div>
                     </a>
                 </li>
+<<<<<<< HEAD
             </ul>           
             
             <div class="navHamburger">
@@ -64,27 +80,56 @@
             </div>
         </div>
         <!-- HEADER -->
+=======
+            </ul>
+>>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
 
+            <div class="navHamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <!-- HEADER -->
         <header class="main-header">
             <div class="searchBar">
                 <input type="text" id="searchBox" placeholder="Search for a movie..." onkeyup="handleSearch()">
-                <!-- onkeypress="keyPress(handleSearch())" -->
                 <div class="results" id="results"></div>
             </div>
-
         </header>
     <div class="categories"> <!--este div envuelve a las sections 1 a 5-->
         <!-- section 1 Home -->
        <section class="categories_item active" id="text">
 
+<<<<<<< HEAD
             <img class="mainBanner" src="images\prueba.jpg" />
         
+=======
+        <div class="categories">
+            <!--este div envuelve a las sections 1 a 5-->
+
+            <!-- section 1 Home -->
+            <section class="categories_item active" id="text">
+                <img class="mainBanner" src="images\prueba.jpg" />
+
+                <!-- MODAL  -->
+                <div id="miModal" class="modal">
+                    <div class="flex" id="flex"></div>
+                </div>
+                <!-- MODAL -->
+
+>>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
                 <div class="modalContainer">
                     <div class="movies-list">
                         <h4>Popular Movies</h4>
                         <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
                         <div class="boxes" id="popular"></div>
+<<<<<<< HEAD
                     </div>  
+=======
+                    </div>
+>>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
                     <div class="movies-list">
                         <h4>Top Rated Movies</h4>
                         <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
@@ -95,12 +140,17 @@
                         <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
                         <div class="boxes" id="upcoming"></div>
                     </div>
+<<<<<<< HEAD
                      <div class="movies-list">
+=======
+                    <div class="movies-list">
+>>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
                         <h4>Now Playing Movies</h4>
                         <a class="all" href="#">View all<i class="fas fa-arrow-right"></i></a>
                         <div class="boxes" id="now_playing"></div>
                     </div>
                 </div>
+<<<<<<< HEAD
         </section>
                     <!-- MODAL  -->
              <div id="miModal" class="modal">
@@ -164,10 +214,72 @@
                     <a href="https://twitter.com/"><i class="fab fa-twitter"></i> TWITTER</a>
                     <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> INSTAGRAM</a>
                     <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> YOUTUBE</a>
+=======
+            </section>
 
-                </nav>
-                <hr>
-            </footer>
+            <!-- section 2 Popular-->
+            <section class="categories_item " id="text">
+                <div>
+                <h4>Popular Movies</h4>
+                <div class="boxes" id="popular1"></div>
+                <div class="boxes" id="popular2"></div>
+                <div class="boxes" id="popular3"></div>
+                <div class="boxes" id="popular4"></div>
+                <a class="ver-mas" href="#">Ver más</a>
+                </div>
+            </section>
+
+            <!--section 3 Top Rated -->
+            <section class="categories_item " id="text">
+                <div>
+                    <h4>Top Rated</h4>
+                    <div class="boxes" id="popular1"></div>
+                    <div class="boxes" id="popular2"></div>
+                    <div class="boxes" id="popular3"></div>
+                    <div class="boxes" id="popular4"></div>
+                    <a class="ver-mas" href="#">Ver más</a>
+                </div>
+            </section>
+
+            <!--section  4 Upcoming -->
+            <section class="categories_item " id="text">
+                <div>
+                    <h4>Upcoming</h4>
+                    <div class="boxes" id="popular1"></div>
+                    <div class="boxes" id="popular2"></div>
+                    <div class="boxes" id="popular3"></div>
+                    <div class="boxes" id="popular4"></div>
+                    <a class="ver-mas" href="#">Ver más</a>
+                </div>
+            </section>
+
+    <!--section 5 Now playing -->
+      <section class="categories_item " id="text">
+                <div>
+                    <h4>Top Rated</h4>
+                    <div class="boxes" id="popular1"></div>
+                    <div class="boxes" id="popular2"></div>
+                    <div class="boxes" id="popular3"></div>
+                    <div class="boxes" id="popular4"></div>
+                    <a class="ver-mas" href="#">Ver más</a>
+                </div>
+            </section>
+        </div> 
+       <!-- este div envuelve a las sections 1 a 5-->
+    </div>
+
+    <script type="text/javascript" src="js/prueba.js"></script>
+>>>>>>> 31534a32f8e36c1941a290c5014169347d4694c9
+
+    <footer class="footer">
+        <nav>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> FACEBOOK</a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter"></i> TWITTER</a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> YOUTUBE</a>
+        </nav>
+        <hr>
+    </footer>
 
     </div>
 </body>
