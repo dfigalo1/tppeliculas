@@ -18,47 +18,44 @@
     <div class="app">
         <div class="nav">
             <ul class="sideBar" id="tabs">
-
-                <li class="sideBar_item  ">
-                    <a href="#" class="nav_logo active" title="">
-                    
-                            <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="litImage navHome">
-                    
-                    </a>
-                </li>
-
-                <li class="sideBar_item">
-                    <a href="#" class="nav_link ">
-                        <div class="nav_link-wrap">
-                            <img class="litImage navPopular" src="./assets/popular.png" />
-                            <span class="nav_link-title">Popular</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="sideBar_item">
-                    <a href="#" class="nav_link">
-                        <div class="nav_link-wrap">
-                            <img class="litImage navTopRated" src="./assets/top_rated.png" />
-                            <span class="nav_link-title">Top Rated</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="sideBar_item">
-                    <a href="#" class="nav_link">
-                        <div class="nav_link-wrap">
-                            <img class="litImage navUpcoming" src="./assets/upcoming.png" />
-                            <span class="nav_link-title">Upcoming</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="sideBar_item">
-                    <a href="#" class="nav_link">
-                        <div class="nav_link-wrap">
-                            <img class="litImage navNowPlaying" src="./assets/now_playing.png" />
-                            <span class="nav_link-title">Now Playing</span>
-                        </div>
-                    </a>
-                </li>
+                    <li class="nav_logo" id="tabso">
+                            <a href="#" class="nav_logo nav_link " title="">
+                                <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
+                            </a>
+                        </li>
+        
+                        <li class="sideBar_item ">
+                            <a href="#" class="nav_link" onclick="popularInitialize()">
+                                <div class="nav_link-wrap">
+                                    <img class="litImage" src="./assets/popular.png" />
+                                    <span class="nav_link-title">Popular</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sideBar_item">
+                            <a href="#" class="nav_link">
+                                <div class="nav_link-wrap">
+                                    <img class="litImage" src="./assets/top_rated.png" />
+                                    <span class="nav_link-title">Top Rated</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sideBar_item">
+                            <a href="#" class="nav_link">
+                                <div class="nav_link-wrap">
+                                    <img class="litImage" src="./assets/upcoming.png" />
+                                    <span class="nav_link-title">Upcoming</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="sideBar_item">
+                            <a href="#" class="nav_link">
+                                <div class="nav_link-wrap">
+                                    <img class="litImage" src="./assets/now_playing.png" />
+                                    <span class="nav_link-title">Now Playing</span>
+                                </div>
+                            </a>
+                        </li>
             </ul>
 
             <div class="navHamburger">
@@ -79,7 +76,7 @@
             <!--este div envuelve a las sections 1 a 5-->
 
             <!-- section 1 Home -->
-            <section class="categories_item active" id="navHome">
+            <section class="categories_item navHome active" id="navHome">
                 <img class="mainBanner" src="images\prueba.jpg" />
                 <div class="modalContainer">
                     <div class="movies-list">
@@ -110,7 +107,7 @@
              </div>                  
                         <!-- MODAL -->
 <!-- section 2 Popular-->
- <section class="categories_item " id="navPopular">
+ <section class="categories_item navPopular" id="navPopular">
         <h4>Popular Movies</h4>
         <div class="boxes" id="popular1"></div>
         <div class="boxes" id="popular2"></div>
@@ -121,7 +118,7 @@
            
 
 <!--section 3 Top Rated -->
- <section class="categories_item " id="navTopRated">
+ <section class="categories_item navTopRated" id="navTopRated">
     <div>
         <h4>Top Rated</h4>
         <div class="boxes" id="popular1"></div>
@@ -133,7 +130,7 @@
  </section>
 
 <!--section  4 Upcoming -->
-  <section class="categories_item " id="navUpcoming">
+  <section class="categories_item navUpcoming" id="navUpcoming">
         <div>
          <h4>Upcoming</h4>
          <div class="boxes" id="popular1"></div>
@@ -145,7 +142,7 @@
     </section>   
 
     <!--section 5 Now Playing -->
-  <section class="categories_item " id="navNowPlaying">
+  <section class="categories_item navNowPlaying" id="navNowPlaying">
         <div>
          <h4>Now Playing</h4>
          <div class="boxes" id="popular1"></div>

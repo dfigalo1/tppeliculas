@@ -91,19 +91,20 @@ const karin = (elem, classname) => {
 
 // FUNCION NAVEGADOR en progreso mas o menos 
 
+(function(d){
+let sideBar = d.querySelectorAll('.nav_link');
+let categoriesSection = d.querySelectorAll('.categories_item');
+d.getElementById('tabs').addEventListener('click', (e) => {
+  if (e.target.classList.contains('nav_link')){
+    let i = sideBar.indexOf(e.target);
+    sideBar.map( (tab) => tab.classList.remove('active'));
+    sideBar[i].classList.add('active');
+    categoriesSection.map( (panel) => panel.classList.remove('active'));
+    categoriesSection[i].classList.add('active');
+  }
+});
+})(document);
 
-
-function onTabClick(event) {
-  let activeTabs = document.querySelectorAll('.active');
-  activeTabs.forEach(function(tab) {
-    tab.className = tab.className.replace(' active', '');
-  });
-  event.target.parentElement.className += ' active';
-   console.log(document.getElementById(event.target.className.split("litImage")[1]));
-  
-}
- const element = document.getElementById('tabs');
-  element.addEventListener('click', onTabClick, false);
 
 
 // PAGINAS DE CATEGORIAS en progreso
@@ -115,12 +116,12 @@ const listAllMovies = (title, category) => {
 let currentPage = 1
 
 
-const PapularDataCategory = (category) => {
-  return fetch (`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}&page=${currentPage}`)
+const PapularDataCategory = () => {
+  return fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${currentPage}`)
   .then (response => response.json())
   .then(res => {
     for(i=0; i<5;i++){
-      printPopularCategory (res.results [i], category)
+      printPopularCategory (res.results[i])
     }
   })
 }
@@ -149,10 +150,13 @@ const printPopularCategory = ({title, id,  poster_path}, boxesId) => {
 
 };
 
+let otherCategories = ['popular1', 'popular2', 'popular3', 'popular4']
 
-//const popularInitialize = () => {
-//categories.forEach(e => PapularDataCategory(e))
-//}
+
+
+const popularInitialize = () => {
+  otherCategories.forEach( e => printPopularCategory(e) )
+}
 
   // LOAD MORE en progreso
 
