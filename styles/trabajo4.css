@@ -198,11 +198,11 @@ li a {
   background: #fff;
   border-right: none;
   z-index: 0; }
-  .sideBar .nav_link {
+  .sideBar .litImage {
     position: relative;
     background: #fff;
     z-index: 0; }
-    .sideBar .nav_link.active {
+    .sideBar .litImage.active {
       background: #218871;
       background: radial-gradient(circle, #218871 0%, #100b60 99%);
       z-index: 20; }
@@ -228,7 +228,7 @@ li a {
   align-items: center; }
 
 .text h4 {
-  color: #030521;
+  color: #a5a6bb;
   font-weight: bold;
   font-size: 30px;
   padding: 10px 40px 3px 110px; }
@@ -269,7 +269,7 @@ li a {
     top: 0;
     opacity: 1; } }
 .close {
-  color: #9b1c1c;
+  color: #5c2727;
   font-size: 30px;
   font-weight: bold;
   padding: 0px 100px 250px 70px; }

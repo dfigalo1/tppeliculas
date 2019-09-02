@@ -25,6 +25,8 @@ const karin = (elem, classname) => {
   // SEARCH INPUT semi completado 
   let lastSearch;
 
+
+
   const handleSearch = () => {
     let searchText = event.target.value;
     if ( searchText.length >= 3 || event.keyCode === 13 && searchText !== lastSearch){
@@ -91,14 +93,14 @@ const karin = (elem, classname) => {
 
 
 (function(d){
-  let sideBar = Array.prototype.slice.apply(d.querySelectorAll('.nav_link'));
+  let sideBar = Array.prototype.slice.apply(d.querySelectorAll('ul.sideBar > li.sideBar_item > .nav_link > .litImage'));
   let categoriesSection = Array.prototype.slice.apply(d.querySelectorAll('.categories_item'));
   d.getElementById('tabs').addEventListener('click', (e) => {
-    if (e.target.classList.contains('nav_link')){
+    if (e.target.classList.contains('ul sideBar > li sideBar_item > nav_link > litImage')){
       let i = sideBar.indexOf(e.target);
-      sideBar.map( (tab) => tab.classList.remove('active'));
+      sideBar.map((tab) => tab.classList.remove('active'));
       sideBar[i].classList.add('active');
-      categoriesSection.map( (panel) => panel.classList.remove('active'));
+      categoriesSection.map((panel) => panel.classList.remove('active'));
       categoriesSection[i].classList.add('active');
     }
   });
@@ -112,44 +114,45 @@ const listAllMovies = (title, category) => {
 
 let currentPage = 1
 
-//let otherCategories = ['popular1', 'popular2', 'popular3', 'popular4']
 
-const PapularDataCategory = () => {
-  return fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${currentPage}`)
+const PapularDataCategory = (category) => {
+  return fetch (`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}&page=${currentPage}`)
   .then (response => response.json())
   .then(res => {
     for(i=0; i<5;i++){
-      printPopularCategory (res.results[i])
+      printPopularCategory (res.results [i], category)
     }
   })
 }
 
+//let otherCategories = ['popular1', 'popular2', 'popular3', 'popular4']
+//otherCategories.forEach( e => printPopularCategory(e) )
 
 // contruir la categoria popular una vez recibida la info  
-const printPopularCategory = ({title, id,  poster_path}, idContainer) => {
-  const ImagContainer = document.getElementById(idContainer);
-  let divs = karin('div' ,"imgContainer");
+const printPopularCategory = ({title, id,  poster_path}, boxesId) => {
+  const ImagContainer = document.getElementById(boxesId);
+  let boxDivs = karin('div' ,"imgContainer");
   
-  let a = karin('a', 'imageLink');  
-  a.href = '#'; 
-  a.id = 'open';
-  a.onclick = () => modalData(id);
+  let boxA = karin('a', 'imageLink');  
+  boxA.href = '#'; 
+  boxA.onclick = () => modalData(id);
 
-  let imageResult = karin('img', 'image');
-  imageResult.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
-  let titleResult = karin('p', 'imagetitle');
-  titleResult.innerText = title;
+  let boximageResult = karin('img', 'image');
+  boximageResult.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
+  let boxtitleResult = karin('p', 'imagetitle');
+  boxtitleResult.innerText = title;
 
-  ImagContainer.appendChild(divs);
-  divs.appendChild(a);
-  a.appendChild(imageResult);
-  a.appendChild(titleResult); 
+  ImagContainer.appendChild(boxDivs);
+  boxDivs.appendChild(boxA);
+  boxA.appendChild(boximageResult);
+  boxA.appendChild(boxtitleResult); 
 
 };
 
-const popularInitialize = () => {(e => PapularDataCategory(e))
-}
 
+//const popularInitialize = () => {
+//categories.forEach(e => PapularDataCategory(e))
+//}
 
   // LOAD MORE en progreso
 
@@ -165,16 +168,17 @@ const popularInitialize = () => {(e => PapularDataCategory(e))
   .then(res => printModal(res)
   )
 };
+const openModal = () => {
+   let modal = document.getElementById('miModal');
+   modal.style.display = 'block';
+   
+}
+
 
 const printModal = ({title, tagline, poster_path, backdrop_path, overview, release_date, genres}) => {
 
-  let modal = document.getElementById('miModal');
-  modal.style.display = 'block';
+  openModal()
   let flex = document.getElementById('flex');
-
-
-
-
 
 let modalWrapper = karin('div' ,"contenido-modal");
 modalWrapper.id = "contenido-modal";
