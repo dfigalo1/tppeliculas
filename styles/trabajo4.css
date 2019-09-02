@@ -11,112 +11,114 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline; 
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; 
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #ffffff;
-    background: #081c24;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  background: #081c24;
 }
   
 .mainBanner{
-    position:relative;
-    display: block;
-    margin: 0px 110px 0px 110px;
-    height: 530px;
+  position:relative;
+  display: block;
+  margin: 0px 110px 0px 110px;
+  height: 530px;
 } 
-  /* BAJAR LA IMAGEN DE HOME */
-/* @media only screen and (max-width: 500px){
-    .mainBanner{
-        margin: 0px 10px 10px 10px;
-        height: 200px;
-    }
-} */
+@media only screen and (max-width: 500px){
+  .mainBanner{
+    top:65px;
+    right: 106px;
+    height: 200px;
+  }
+}
   
 .movies-list{
-    padding: 20px 10px 15px 115px;
+  padding: 20px 10px 15px 115px;
 }
-/* @media only screen and (max-width: 500px){
-    .movies-list{
-        padding: 10px 0px 8px 109px;
-    }
-} */
   
 .boxes{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px;
-    margin: 10px 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  margin: 10px 3px;
 }
   
 .modalContainer{
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0px -3px 0px 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px -3px 0px 5px;
 }
   
 .image{
-    width: 200px; 
-    border-radius: 30px;
-    opacity: 1;
+  width: 200px; 
+  border-radius: 30px;
+  opacity: 1;
 }
   
 .image:hover{
-    opacity: 0.3;
-    transition: 0.5s;
+  opacity: 0.3;
+  transition: 0.5s;
 } 
-/* @media only screen and (max-width: 500px){
-    .image{
-        width: 160px;
-        justify-content: space-between;
-    }
-} */
   
 .ver-mas{
-    color: #797979;
-    margin: 40px 0px 0px 650px;
-    font-size: 20px;
-    font-weight: bold;
+  color: #797979;
+  margin: 40px 0px 0px 650px;
+  font-size: 20px;
+  font-weight: bold;
 }
   
 .main-header{
-    position: fixed;
-    z-index: 999;
-    width: 100vw;
-    height: 75px;
-    margin-left: 106px;
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 75px;
+  margin-left: 106px;
+}
+@media only screen and (max-width: 500px){
+.main-header{
+  margin-left: 70px;
+  margin-right: 700px;
+  height: 60px;
+ width: 340px;
+}
 }
   
 .main-header .searchBar{
-    position: relative;
-    height: 100%;
-    background-color: #ffffff;
+  position: relative;
+  height: 100%;
+  background-color: #ffffff;
 }
-  
+
 .searchBar input { 
-    display: block;
-    width: 100%;
-    padding: 30px 60px 15px 45px;
-    outline: none;
-    border: 0;
-    background-color: transparent;
-    color: #081c24;
-    font-weight: 300;
-    font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 30px 60px 15px 45px;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  color: #081c24;
+  font-weight: 300;
+  font-size: 16px;
 }
-  
+@media only screen and (max-width: 500px){
+  .searchBar input { 
+    padding: 20px 60px 15px 20px;
+  }
+}
+
 .searchBar .search{
-    height: 15px;
-    width: 15px;
-    padding: 5px 40px 80px 45px;
+  height: 15px;
+  width: 15px;
+  padding: 5px 40px 80px 45px;
 }
   
 .results{
@@ -168,35 +170,16 @@ a:hover {
   color: #ffffff;
 }
 
-.footer {
-  margin: 0 auto;
-  overflow: hidden;
-  width: 90%;
-  min-width: 600px;
-  max-width: 900px;
-}
-
-.footer nav{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 200px;
-   clear: both;
-}
-/* @media only screen and (max-width: 500px){
-  .footer nav{
-      display: none;
-  }
-} */
-
-footer .end-line{
-  display: none;
-}
-
 .nav {
   position: fixed;
   width: 100px;
   height: 100vh;
   z-index: 999;
+}
+@media only screen and (max-width: 500px){
+  .nav{
+    display:none;
+  }
 }
 
 .nav .nav_logo {
@@ -206,6 +189,7 @@ margin-top: -20px;
   height: 70px;
   width: 80px;
 }
+
 
 .nav .nav_logo-image{
   margin-left: 10px;
@@ -232,6 +216,7 @@ li a {
 .app {
   position: relative;
    }
+  
 
 .sideBar {
   position: relative;
@@ -240,6 +225,7 @@ li a {
  margin-left: 2px;
     margin-top: 20px;
  }
+
   .sideBar .nav_link {
     position: relative;
     margin-left: 14px;
@@ -264,6 +250,7 @@ li a {
       left: 0%; }    
 /* termina nav menu dinamico */
 
+
 /* MODAL */
 .flex {
   width: 100%;
@@ -281,8 +268,7 @@ li a {
   width: 100%;
   height: 100%;
   background: #00000073; 
-/* float: center;
-    clear: both; */
+
 }
 
 .contenido-modal {
@@ -294,7 +280,18 @@ li a {
   box-shadow: 0 0 6px 0 #00000066;
   animation-name: modal;
   animation-duration: 1s;
-  padding: 3px 3px; }
+  padding: 3px 3px; 
+}
+  @media only screen and (max-width: 500px){
+    .contenido-modal {
+      position: relative;
+      background-color: #fefefe;
+  height: 80%;
+      width: 50%;
+      /* ESTA PARTE ENSANCHA ELMDOAL */
+      box-shadow: 0 0 6px 0 #00000066;
+      padding: 0px -40px 0px 100px; }
+  }
 
 /* ANIMACION */
 @keyframes modal {
@@ -338,15 +335,54 @@ h3 {
     font-size: 17px;
     font-weight: bold;
     padding: 10px 40px 3px 110px; }
-
+  @media only screen and (max-width: 500px){
+    h4 {
+      color: #5c6092;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 80px 40px 3px 90px; }
+  }
 /* INTERNO PARA QUE QUEDEN BIEN LAS LETRAS */
 .modal-body {
-  padding: 10px 0px 5px 15px; }
+  padding: 10px 0px 5px 15px; 
+}
+
 
 .imageModal {
   padding: 10px 40px 3px 190px;
   width: 150px;
   border-radius: 30px;
-  opacity: 1; }
+  opacity: 1; 
+}
+@media only screen and (max-width: 500px){
+  .imageModal {
+    padding: 10px 40px 3px 20px;
+    width: 120px;
+    border-radius: 30px;
+    opacity: 1; 
+  }
+}
 
+.footer {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 90%;
+  min-width: 600px;
+  max-width: 900px;
+}
+  .footer nav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 200px;
+    clear: both;
+  }
+  @media only screen and (max-width: 500px){
+    .footer nav{
+      display: none;
+    }
+    .footer hr{
+      display: none;
+    }
+  }
+  
 /*# sourceMappingURL=trabajo4.css.map */
