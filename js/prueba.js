@@ -53,7 +53,7 @@ const karin = (elem, classname) => {
     })
   };
    
-  //  HOME PAGE compleatado
+  //  HOME PAGE completado
 
   const homeData = (category) => {
     return fetch (`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}`)
@@ -92,19 +92,19 @@ const karin = (elem, classname) => {
 // FUNCION NAVEGADOR en progreso mas o menos 
 
 
-(function(d){
-  let sideBar = Array.prototype.slice.apply(d.querySelectorAll('ul.sideBar > li.sideBar_item > .nav_link > .litImage'));
-  let categoriesSection = Array.prototype.slice.apply(d.querySelectorAll('.categories_item'));
-  d.getElementById('tabs').addEventListener('click', (e) => {
-    if (e.target.classList.contains('ul sideBar > li sideBar_item > nav_link > litImage')){
-      let i = sideBar.indexOf(e.target);
-      sideBar.map((tab) => tab.classList.remove('active'));
-      sideBar[i].classList.add('active');
-      categoriesSection.map((panel) => panel.classList.remove('active'));
-      categoriesSection[i].classList.add('active');
-    }
+
+function onTabClick(event) {
+  let activeTabs = document.querySelectorAll('.active');
+  activeTabs.forEach(function(tab) {
+    tab.className = tab.className.replace(' active', '');
   });
-})(document);
+  event.target.parentElement.className += ' active';
+   console.log(document.getElementById(event.target.className.split("litImage")[1]));
+  
+}
+ const element = document.getElementById('tabs');
+  element.addEventListener('click', onTabClick, false);
+
 
 // PAGINAS DE CATEGORIAS en progreso
 

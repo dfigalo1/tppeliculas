@@ -22,8 +22,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: #ffffff;
-  background: #218871;
-  background: radial-gradient(circle, #218871 0%, #100b60 99%); }
+  background: #081c24; }
 
 .mainBanner {
   position: relative;
@@ -202,21 +201,16 @@ li a {
     position: relative;
     background: #fff;
     z-index: 0; }
-    .sideBar .nav_link.active {
-      background: #218871;
-      background: radial-gradient(circle, #218871 0%, #100b60 99%);
+    .sideBar .nav_link .nav_link-wrap.active {
+      background: #081c24;
       z-index: 20; }
 
-.categories {
-  position: relative;
-  z-index: 10; }
-  .categories_item {
-    position: absolute;
-    left: 1000%; }
-    .categories_item.active {
-      z-index: 20;
-      position: relative;
-      left: 0%; }
+.categories_item {
+  display: none; }
+  .categories_item.active {
+    display: block;
+    z-index: 20;
+    position: relative; }
 
 /* termina nav menu dinamico */
 /* MODAL */
