@@ -150,21 +150,22 @@ const popularInitialize = () => {
 }
 ////////////////top rated ///////////////////
 
-//let bla = ['top_rated1'];
-const topRatedDataCategory = () => {
+let  topRatedCategories = ['top_rated1', 'top_rated2', 'top_rated3', 'top_rated4'] 
+
+const topRatedDataCategory = (topRatedId) => {
   return fetch (`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${currentPage}`)
   .then (response => response.json())
   .then(res => {
-    for(i=0; i<20;i++){
-      printTopRatedCategory(res.results[i])
+    for(i=0; i<5;i++){
+      printTopRatedCategory(res.results[i], topRatedId)
     }
   })
  }
 
 
-const printTopRatedCategory = ({title, id, poster_path}) => {
+const printTopRatedCategory = ({title, id, poster_path}, topRatedId) => {
   
-const ImagContainer = document.getElementById("topRated");
+const ImagContainer = document.getElementById(topRatedId);
  let div = karin('div' ,"imgContainer");
  
  let a= karin('a', 'imageLink');  
@@ -185,7 +186,8 @@ const ImagContainer = document.getElementById("topRated");
 
 
 const topRatedInitialize = () => { 
-  topRatedDataCategory()
+  topRatedCategories.forEach(e => topRatedDataCategory(e))
+  
 };
  
 
@@ -268,10 +270,6 @@ const nowPlayingInitialize = () => {
   nowPlayingInitialize()
 }
 
-////
-
-
-
 
  // LOAD MORE en progreso
 
@@ -300,9 +298,6 @@ const printModal = ({title, tagline, poster_path, backdrop_path, overview, relea
 let modalWrapper = karin('div' ,"contenido-modal");
 modalWrapper.id = "contenido-modal";
 
-//DESCOMENTAR Y AGREGAR SASS PARA QUE LA IMAGEN BACKDROP_PATH SE USE DE BACKGRAUNG IMAGE 
-//let modalBackDropImg = karin('img', 'backdropImage');
-//modalImage.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${backdrop_path}`;
 
 let modalHeader = karin('div' ,"modal-headerflex");
 let modalImage = karin('img', 'imageModal');
@@ -322,15 +317,6 @@ modalDescription.innerText = overview;
 let modalGenreTitle = karin('h3');
 modalGenreTitle.innerText = "GENRES";
 
-//genres.forEach( e => {
-// let ul = karin('ul', 'any')
-// ul.id = 'genres';
-//  let genres = document.getElementsByClassName('any')
-// let genre = document.createElement('li')
-// genre.innerText = e.name
-// genres.appendChild(g)
-//});
-
 let modalrealeseDateTitle = karin('h3');
 modalrealeseDateTitle.innerText = "RELEASE DATE";
 let realeseDate = karin('p');
@@ -341,7 +327,7 @@ let footer = karin('div', 'foo' )
 
 flex.appendChild(modalWrapper);
 modalWrapper.appendChild(modalHeader);
-//modalWrapper.appendChild(modalBackDropImg)
+
 modalHeader.appendChild(modalImage);
 modalHeader.appendChild(modalTitle);
 modalHeader.appendChild(modalSubTitle);
@@ -351,7 +337,7 @@ modalHeader.appendChild(span);
 modalWrapper.appendChild(modalBody);
 modalBody.appendChild(modalDescription);
 modalBody.appendChild(modalGenreTitle);
-//modalBody.appendChild(modalGenre);
+
 modalBody.appendChild(modalrealeseDateTitle);
 modalBody.appendChild(realeseDate);
 
