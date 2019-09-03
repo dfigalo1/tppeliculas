@@ -67,7 +67,7 @@ const karin = (elem, classname) => {
   });
  })(document);
   
- //  HOME PAGE compleatado
+ //  HOME PAGE completado
 
  let categories = ['popular', 'top_rated', 'upcoming', 'now_playing']
 
@@ -113,19 +113,19 @@ let otherCategories = ['popular1', 'popular2', 'popular3', 'popular4']
 
 let currentPage = 1
 
-const PapularDataCategory = () => {
+const PapularDataCategory = (pupularId) => {
  return fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${currentPage}`)
  .then (response => response.json())
  .then(res => {
-   for(i=0; i<20;i++){
-    printPopularCategory(res.results[i])
+   for(i=0; i<5;i++){
+    printPopularCategory(res.results[i],pupularId )
    }
  })
 }
 
-const printPopularCategory = ({title, id, poster_path}) => {
+const printPopularCategory = ({title, id, poster_path},pupularId) => {
   
-const ImagContainer = document.getElementById("popular1");
+const ImagContainer = document.getElementById(pupularId);
  let div = karin('div' ,"imgContainer");
  
  let a= karin('a', 'imageLink');  
@@ -146,9 +146,9 @@ const ImagContainer = document.getElementById("popular1");
 
 
 const popularInitialize = () => { 
-  PapularDataCategory();
+  otherCategories.forEach(e => PapularDataCategory(e))
 }
-//top rated ///////////////////
+////////////////top rated ///////////////////
 
 //let bla = ['top_rated1'];
 const topRatedDataCategory = () => {
@@ -156,34 +156,119 @@ const topRatedDataCategory = () => {
   .then (response => response.json())
   .then(res => {
     for(i=0; i<20;i++){
-     printPopularCategory(res.results[i])
+      printTopRatedCategory(res.results[i])
     }
   })
  }
 
+
+const printTopRatedCategory = ({title, id, poster_path}) => {
+  
+const ImagContainer = document.getElementById("topRated");
+ let div = karin('div' ,"imgContainer");
+ 
+ let a= karin('a', 'imageLink');  
+ a.href = '#'; 
+
+ a.onclick = () => modalData(id);
+
+ let imageResult = karin('img', 'image');
+ imageResult.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
+ let titleResult = karin('p', 'imagetitle');
+ titleResult.innerText = title;
+
+ ImagContainer.appendChild(div);
+ div.appendChild(a);
+ a.appendChild(imageResult);
+ a.appendChild(titleResult); 
+};
+
+
+const topRatedInitialize = () => { 
+  topRatedDataCategory()
+};
+ 
+
+/////upcoming//////////////
+
+ //let others = ['upcoming1'] ,['now_playing1']
+ 
  const upcomingDataCategory = () => {
   return fetch (`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&page=${currentPage}`)
   .then (response => response.json())
   .then(res => {
     for(i=0; i<20;i++){
-     printPopularCategory(res.results[i])
-    }
-  })
- }
-
- const nowPlayingDataCategory = () => {
-  return fetch (`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${currentPage}`)
-  .then (response => response.json())
-  .then(res => {
-    for(i=0; i<20;i++){
-     printPopularCategory(res.results[i])
+      printUpcomingCategory(res.results[i])
     }
   })
  }
  
- //let others = ['upcoming1'] ,['now_playing1']
+ const printUpcomingCategory = ({title, id, poster_path}) => {
+   
+ const ImagContainer = document.getElementById("upcoming1");
+  let div = karin('div' ,"imgContainer");
+  
+  let a= karin('a', 'imageLink');  
+  a.href = '#'; 
  
+  a.onclick = () => modalData(id);
+ 
+  let imageResult = karin('img', 'image');
+  imageResult.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
+  let titleResult = karin('p', 'imagetitle');
+  titleResult.innerText = title;
+ 
+  ImagContainer.appendChild(div);
+  div.appendChild(a);
+  a.appendChild(imageResult);
+  a.appendChild(titleResult); 
+ };
+ 
+ 
+ const upcomingInitialize = () => { 
+    upcomingDataCategory()
+ }
 
+
+ //////////now playing///////////
+
+const nowPlayingDataCategory = () => {
+ return fetch (`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${currentPage}`)
+ .then (response => response.json())
+ .then(res => {
+   for(i=0; i<20;i++){
+    printPopularCategory(res.results[i] )
+   }
+ })
+}
+
+const printNow_playingCategory = ({title, id, poster_path}) => {
+  
+const ImagContainer = document.getElementById("now_playing");
+ let div = karin('div' ,"imgContainer");
+ 
+ let a= karin('a', 'imageLink');  
+ a.href = '#'; 
+
+ a.onclick = () => modalData(id);
+
+ let imageResult = karin('img', 'image');
+ imageResult.src = `https://image.tmdb.org/t/p/w370_and_h556_bestv2${poster_path}`;
+ let titleResult = karin('p', 'imagetitle');
+ titleResult.innerText = title;
+
+ ImagContainer.appendChild(div);
+ div.appendChild(a);
+ a.appendChild(imageResult);
+ a.appendChild(titleResult); 
+};
+
+
+const nowPlayingInitialize = () => { 
+  nowPlayingInitialize()
+}
+
+////
 
 
 
@@ -192,7 +277,6 @@ const topRatedDataCategory = () => {
 
  //let currentPage = 'currentPage + 1'
 
-// fin PAGINAS DE CATEGORIAS en progreso
  
 // MODAL  completado!
 
