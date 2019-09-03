@@ -18,44 +18,44 @@
     <div class="app">
         <div class="nav">
             <ul class="sideBar" id="tabs">
-                    <li class="nav_logo" id="tabso">
-                            <a href="#" class="nav_logo nav_link " title="">
-                                <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
-                            </a>
-                        </li>
-        
-                        <li class="sideBar_item ">
-                            <a href="#" class="nav_link" onclick="popularInitialize()">
-                                <div class="nav_link-wrap">
-                                    <img class="litImage" src="./assets/popular.png" />
-                                    <span class="nav_link-title">Popular</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sideBar_item">
-                            <a href="#" class="nav_link">
-                                <div class="nav_link-wrap">
-                                    <img class="litImage" src="./assets/top_rated.png" />
-                                    <span class="nav_link-title">Top Rated</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sideBar_item">
-                            <a href="#" class="nav_link">
-                                <div class="nav_link-wrap">
-                                    <img class="litImage" src="./assets/upcoming.png" />
-                                    <span class="nav_link-title">Upcoming</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="sideBar_item">
-                            <a href="#" class="nav_link">
-                                <div class="nav_link-wrap">
-                                    <img class="litImage" src="./assets/now_playing.png" />
-                                    <span class="nav_link-title">Now Playing</span>
-                                </div>
-                            </a>
-                        </li>
+                <li class="nav_logo" id="tabso">
+                    <a href="#" class="nav_logo nav_link " title="">
+                        <img src="./assets/iso_blanco_transparent.svg" alt="Ada" class="nav_logo-image">
+                    </a>
+                </li>
+
+                <li class="sideBar_item ">
+                    <a href="#" class="nav_link" onclick="popularInitialize()">
+                        <div class="nav_link-wrap">
+                            <img class="litImage" src="./assets/popular.png" />
+                            <span class="nav_link-title">Popular</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="sideBar_item">
+                    <a href="#" class="nav_link" onclick="">
+                        <div class="nav_link-wrap">
+                            <img class="litImage" src="./assets/top_rated.png" />
+                            <span class="nav_link-title">Top Rated</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="sideBar_item">
+                    <a href="#" class="nav_link" onclick="">
+                        <div class="nav_link-wrap">
+                            <img class="litImage" src="./assets/upcoming.png" />
+                            <span class="nav_link-title">Upcoming</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="sideBar_item">
+                    <a href="#" class="nav_link" onclick="">
+                        <div class="nav_link-wrap">
+                            <img class="litImage" src="./assets/now_playing.png" />
+                            <span class="nav_link-title">Now Playing</span>
+                        </div>
+                    </a>
+                </li>
             </ul>
 
             <div class="navHamburger">
@@ -72,12 +72,20 @@
                 <div class="results" id="results"></div>
             </div>
         </header>
+
         <div class="categories">
             <!--este div envuelve a las sections 1 a 5-->
 
             <!-- section 1 Home -->
-            <section class="categories_item navHome active" id="navHome">
+            <section class="categories_item active" id="text">
                 <img class="mainBanner" src="images\prueba.jpg" />
+
+                <!-- MODAL  -->
+                <div id="miModal" class="modal">
+                    <div class="flex" id="flex"></div>
+                </div>
+                <!-- MODAL -->
+
                 <div class="modalContainer">
                     <div class="movies-list">
                         <h4>Popular Movies</h4>
@@ -100,70 +108,58 @@
                         <div class="boxes" id="now_playing"></div>
                     </div>
                 </div>
-        </section>
-                    <!-- MODAL  -->
-             <div id="miModal" class="modal">
-                 <div class="flex" id="flex"></div>
-             </div>                  
-                        <!-- MODAL -->
-<!-- section 2 Popular-->
- <section class="categories_item navPopular" id="navPopular">
-        <h4>Popular Movies</h4>
-        <div class="boxes" id="popular1"></div>
-        <div class="boxes" id="popular2"></div>
-        <div class="boxes" id="popular3"></div>
-        <div class="boxes" id="popular4"></div>
-        <a class="ver-mas" href="#">Ver más 2</a>
- </section>
-           
+            </section>
+            <!-- section 2 Popular-->
+            <section class="categories_item " id="text">
+                <div>
+                <h4>Popular Movies</h4>
+                <div class="boxes" id="popular1">
 
-<!--section 3 Top Rated -->
- <section class="categories_item navTopRated" id="navTopRated">
-    <div>
-        <h4>Top Rated</h4>
-        <div class="boxes" id="popular1"></div>
-        <div class="boxes" id="popular2"></div>
-        <div class="boxes" id="popular3"></div>
-        <div class="boxes" id="popular4"></div>
-        <a class="ver-mas" href="#">Ver más 3</a>
+                </div>
+                <a class="ver-mas" href="#">Ver más</a>
+                </div>
+            </section>
+
+            <!--section 3 Top Rated -->
+            <section class="categories_item " id="text">
+                <div>
+                    <h4>Top Rated</h4>
+                    <div class="boxes" id="popular"></div>
+                    <div class="boxes" id="top_rated1"></div>
+                    <div class="boxes" id="upcoming"></div>
+                    <div class="boxes" id="now_playing"></div>
+                    <a class="ver-mas" href="#">Ver más 3</a>
+                </div>
+            </section>
+
+            <!--section  4 Upcoming -->
+            <section class="categories_item " id="text">
+                <div>
+                    <h4>Upcoming</h4>
+                    <div class="boxes" id="popular1"></div>
+                    <div class="boxes" id="top_rated"></div>
+                    <div class="boxes" id="upcoming1"></div>
+                    <div class="boxes" id="now_playing"></div>
+                    <a class="ver-mas" href="#">Ver más 4</a>
+                </div>
+            </section>
+
+    <!--section 5 Now playing -->
+      <section class="categories_item " id="text">
+                <div>
+                    <h4>Top Rated</h4>
+                    <div class="boxes" id="popular"></div>
+                    <div class="boxes" id="top_rated"></div>
+                    <div class="boxes" id="upcoming"></div>
+                    <div class="boxes" id="now_playing1"></div>
+                    <a class="ver-mas" href="#">Ver más 5</a>
+                </div>
+            </section>
+        </div> 
+       <!-- este div envuelve a las sections 1 a 5-->
     </div>
- </section>
 
-<!--section  4 Upcoming -->
-  <section class="categories_item navUpcoming" id="navUpcoming">
-        <div>
-         <h4>Upcoming</h4>
-         <div class="boxes" id="popular1"></div>
-         <div class="boxes" id="popular2"></div>
-         <div class="boxes" id="popular3"></div>
-         <div class="boxes" id="popular4"></div>
-         <a class="ver-mas" href="#">Ver más 4</a>
-     </div>
-    </section>   
-
-    <!--section 5 Now Playing -->
-  <section class="categories_item navNowPlaying" id="navNowPlaying">
-        <div>
-         <h4>Now Playing</h4>
-         <div class="boxes" id="popular1"></div>
-         <div class="boxes" id="popular2"></div>
-         <div class="boxes" id="popular3"></div>
-         <div class="boxes" id="popular4"></div>
-         <a class="ver-mas" href="#">Ver más 5</a>
-     </div>
-    </section>           
-    </div> <!--este div envuelve a las sections 1 a 5 de arriba-->
-
-    </div>
-            <!-- MODAL -->
-            <script type="text/javascript" src="js/prueba.js"></script>
-            <!-- FOOTER -->
-            <footer class="footer">
-                <nav>
-                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i> FACEBOOK</a>
-                    <a href="https://twitter.com/"><i class="fab fa-twitter"></i> TWITTER</a>
-                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> INSTAGRAM</a>
-                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> YOUTUBE</a>
+    <script type="text/javascript" src="js/prueba.js"></script>
 
     <footer class="footer">
         <nav>

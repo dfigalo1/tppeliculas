@@ -23,7 +23,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: #ffffff;
-  background: #081c24;
+  background: rgb(33,136,113);
+  background: radial-gradient(circle, rgba(33,136,113,1) 0%, rgba(16,11,96,1) 99%);
 }
 
 .mainBanner{
@@ -236,30 +237,32 @@ li a {
 		position: relative;
 		background:#fff;
 		z-index: 0;
-    .nav_link-wrap{
-
-      &.active {
-    background: #081c24;
-  
-		z-index: 20;
-		}
-    }
-    
-
-	}
-}
-
-.categories_item{
-		display: none;
 		
 		&.active {
-      display: block;
+		background: #218871;
+		background: radial-gradient(circle, #218871 0%, #100b60 99%);;
+		z-index: 20;
+		}
+	}
+}
+.categories {
+	position: relative;
+	z-index: 10;
+	
+	&_item{
+		position: absolute;
+		left: 1000%;
+		
+		
+		&.active {
+
 			z-index: 20;
 			position: relative;
-			
+			left: 0%;
 
 		}
 	}
+}
 
 /* termina nav menu dinamico */
 
@@ -353,4 +356,3 @@ h3,h4{
   border-radius: 30px;
   opacity: 1;
 }
-
