@@ -176,16 +176,14 @@ a {
   color: #c7c7c7;
   font-size: 10px;
   display: block;
-  margin-left: 15px;
-}
+  margin-left: 15px; }
 
 a:hover {
-  color: #ffffff;
-}
+  color: white; }
 
 .nav {
   position: fixed;
-  width: 100px;
+  width: 95px;
   height: 100vh;
   z-index: 999;
 }
@@ -215,15 +213,13 @@ ul {
   padding: 0;
   background-color: #fff;
   position: fixed;
-  height: 100%;
-}
+  height: 100%; }
 
 li a {
   display: block;
   color: #f3772e;
   width: 60px;
-  padding: 8px 16px;
-}
+  padding: 8px 16px; }
 
 /* nav menu dinamico */
 .app {
@@ -232,6 +228,7 @@ li a {
   
 .sideBar {
   position: relative;
+  top: 1 px;
   background: #fff;
   border-right: none;
   margin-left: 2px;
@@ -295,8 +292,20 @@ li a {
   align-items: center; 
 }
 
+.text h4 {
+  color: #030521;
+  font-weight: bold;
+  font-size: 30px;
+  padding: 10px 40px 3px 110px; }
+
+.text h5 {
+  color: #cbcef3;
+  font-size: 20px;
+  padding: 10px 40px 3px 110px; }
+
 .modal {
   display: none;
+  /* SE COMENTA display:none; PARA VER EL MODAL; TIENE QUE FUNCIONAR PRESIONANDO LAS IMAGENES Y SIN COMENTARLO */
   position: fixed;
   z-index: 1;
   overflow: auto;
@@ -348,10 +357,9 @@ li a {
   to {
     top: 0;
     opacity: 1; } }
-
 .close {
-  color: #34495e;
-  font-size: 25px;
+  color: #9b1c1c;
+  font-size: 30px;
   font-weight: bold;
   position: relative;
   top:-270px;
@@ -371,19 +379,11 @@ li a {
 .modal-header, .foo {
   padding: 7px 0px;
   background: #34495e;
-}
+  color: #f2f2f2; }
 
 p {
-  color: #211103; 
-  font-size: 13px;
-}
-
-h3 {
   text-align: justify;
-  color: #010318;
-  font-weight: bold;
-  font-size: 14px;
-}
+  color: #030521; }
 
 h4 {
   color: #5c6092;
@@ -405,7 +405,7 @@ h4 {
 }
 
 .imageModal {
-  padding: 10px 40px 3px 190px;
+  padding: 10px 40px 3px 110px;
   width: 150px;
   border-radius: 30px;
   opacity: 1; 

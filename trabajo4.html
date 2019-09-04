@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="sideBar_item">
-                    <a href="#" class="nav_link">
+                    <a href="#" class="nav_link" onclick="topRatedInitialize()">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/top_rated.png" />
                             <span class="nav_link-title">Top Rated</span>
@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="sideBar_item">
-                    <a href="#" class="nav_link">
+                    <a href="#" class="nav_link" onclick="upcomingInitialize()">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/upcoming.png" />
                             <span class="nav_link-title">Upcoming</span>
@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li class="sideBar_item">
-                    <a href="#" class="nav_link">
+                    <a href="#" class="nav_link" onclick="nowPlayingInitialize()">
                         <div class="nav_link-wrap">
                             <img class="litImage" src="./assets/now_playing.png" />
                             <span class="nav_link-title">Now Playing</span>
@@ -119,15 +119,17 @@
                     </div>
                 </div>
             </section>
-
             <!-- section 2 Popular-->
             <section class="categories_item " id="text">
                 <div>
                 <h4>Popular Movies</h4>
-                <div class="boxes" id="popular1"></div>
-                <div class="boxes" id="popular2"></div>
-                <div class="boxes" id="popular3"></div>
-                <div class="boxes" id="popular4"></div>
+                <div class="movies-list" id="">
+                        <div class="boxes" id="popular1"></div>
+                        <div class="boxes" id="popular2"></div>
+                        <div class="boxes" id="popular3"></div>
+                        <div class="boxes" id="popular4"></div>
+
+                </div>
                 <a class="ver-mas" href="#">Ver más</a>
                 </div>
             </section>
@@ -136,11 +138,14 @@
             <section class="categories_item " id="text">
                 <div>
                     <h4>Top Rated</h4>
-                    <div class="boxes" id="popular1"></div>
-                    <div class="boxes" id="popular2"></div>
-                    <div class="boxes" id="popular3"></div>
-                    <div class="boxes" id="popular4"></div>
-                    <a class="ver-mas" href="#">Ver más</a>
+                    <div class="movies-list" id="">
+                        <div class="boxes" id="top_rated1"></div>
+                        <div class="boxes" id="top_rated2"></div>
+                        <div class="boxes" id="top_rated3"></div>
+                        <div class="boxes" id="top_rated4"></div>
+                    </div>
+                    
+                    <a class="ver-mas" href="#">Ver más 3</a>
                 </div>
             </section>
 
@@ -148,23 +153,20 @@
             <section class="categories_item " id="text">
                 <div>
                     <h4>Upcoming</h4>
-                    <div class="boxes" id="popular1"></div>
-                    <div class="boxes" id="popular2"></div>
-                    <div class="boxes" id="popular3"></div>
-                    <div class="boxes" id="popular4"></div>
-                    <a class="ver-mas" href="#">Ver más</a>
+                    
+                    <div class="boxes" id="upcoming1"></div>
+                    
+                    <a class="ver-mas" href="#">Ver más 4</a>
                 </div>
             </section>
 
     <!--section 5 Now playing -->
       <section class="categories_item " id="text">
                 <div>
-                    <h4>Top Rated</h4>
-                    <div class="boxes" id="popular1"></div>
-                    <div class="boxes" id="popular2"></div>
-                    <div class="boxes" id="popular3"></div>
-                    <div class="boxes" id="popular4"></div>
-                    <a class="ver-mas" href="#">Ver más</a>
+                    <h4>Now Playing</h4>
+                    <div class="boxes" id="now_playing"></div>
+ 
+                    <a class="ver-mas" href="#">Ver más 5</a>
                 </div>
             </section>
         </div> 
